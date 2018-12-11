@@ -1,0 +1,132 @@
+<!--
+  Generated template for the SettingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-shadow no-border>
+        <ion-navbar hideBackButton="true">     
+                <ion-buttons left menuToggle="left" style="display: block !important;"> 
+                    <button ion-button icon-only>
+                                <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                    </button>
+                  </ion-buttons>
+
+      <ion-title text-center>Settings</ion-title> 
+
+      <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+            </button>
+    </ion-buttons>
+
+    <ion-buttons end (click)="ProfileBtn()">
+            <button ion-button icon-only>
+                        <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+            </button>
+    </ion-buttons>
+
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>   
+   
+        <ion-segment [(ngModel)]="chooseOptions" >
+            <ion-segment-button  value="Create">
+           <p class="text-header">INVITE USER</p>
+            </ion-segment-button>
+            <ion-segment-button value="list">
+                <p class="text-header"> INVITE PROVIDER</p> 
+            </ion-segment-button>
+            <ion-segment-button value="publish" >
+                <p class="text-header"> PUBLISH PROVIDER</p> 
+            </ion-segment-button>
+          </ion-segment> 
+
+          <ion-grid no-padding no-margin class="gridcl">
+          <div *ngIf="chooseOptions=='Create'">
+             
+            
+            
+
+              <ion-row >
+                  <ion-col col-12 no-padding no-margin class="contenttittle">
+                      Set your message template based on your different event type.
+                  </ion-col>
+              </ion-row>
+ 
+              <ion-row >
+                  <ion-col col-12 no-padding no-margin class="contenttittle1">Message</ion-col>
+              </ion-row>
+
+
+
+<div style="margin-top: 12px;">
+<div class="div-text" style="display:none;"> 
+  <p no-margin no-padding>    Hi, I have registered to ipublishu.com where  </p>
+  <p no-margin no-padding>  users get commission for publishing providers  </p>
+  <p no-margin no-padding>     on social networks, you may also register   </p>
+  <p no-margin no-padding>  via this link: [link]  </p> 
+</div>
+<ion-item> <ion-textarea rows="5" value="" [(ngModel)]="InviteUserTxt"></ion-textarea>    </ion-item> 
+</div>           
+<button ion-button block class="btn-inviteuser" (click)="InviteUserEdit()"> EDIT </button> 
+ 
+   
+
+            </div>
+            <div *ngIf="chooseOptions=='list'">
+
+                    <ion-row >
+                            <ion-col col-12 no-padding no-margin class="contenttittle">
+                                Set your message template based on your different event type.
+                            </ion-col>
+                        </ion-row>
+           
+                        <ion-row >
+                            <ion-col col-12 no-padding no-margin class="contenttittle1">Message</ion-col>
+                        </ion-row>
+          
+                    
+          
+          <div style="margin-top: 12px;">
+          <div class="div-text" style="display:none;"> 
+            <p no-margin no-padding>    Hi, I had a great experience with [name] from</p>
+            <p no-margin no-padding>   ipublishu.com, warmly recommend using  </p>
+            <p no-margin no-padding>    his services via this link: [link]   </p>
+           
+          </div>
+          <ion-item> <ion-textarea rows="5" value="" [(ngModel)]="InviteProviderTxt"></ion-textarea>    </ion-item>
+          </div>           
+          <button ion-button block class="btn-inviteuser" (click)="InviteUserEdit()"> EDIT </button> 
+
+                </div>
+
+                <div *ngIf="chooseOptions=='publish'">
+
+                        <ion-row >
+                                <ion-col col-12 no-padding no-margin class="contenttittle">
+                                    Set your message template based on your different event type.
+                                </ion-col>
+                            </ion-row>
+               
+                            <ion-row >
+                                <ion-col col-12 no-padding no-margin class="contenttittle1">Message</ion-col>
+                            </ion-row>
+
+              <div style="margin-top: 12px;">
+              <div class="div-text" style="display:none;"> 
+                <p no-margin no-padding>   Hi I recommend you check ipublishu.com, where  </p>
+                <p no-margin no-padding> you can get your business promoted via </p>
+                <p no-margin no-padding>    social networks, if interested please   </p>
+                <p no-margin no-padding> follow this link: [link]  </p>
+              </div>
+            <ion-item> <ion-textarea rows="5" value=""  [(ngModel)]="PublishProviderTxt"></ion-textarea>    </ion-item> 
+              </div>           
+              <button ion-button block class="btn-inviteuser" (click)="InviteUserEdit()"> EDIT </button> 
+
+                  </div>
+      </ion-grid>
+</ion-content>
+

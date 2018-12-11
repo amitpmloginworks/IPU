@@ -1,0 +1,105 @@
+page-campaignadd {
+    .img-menu{
+        margin-left: 15px;
+    }
+    .img-chat{
+        margin-right: 12px;
+    }
+    .img-profile{
+        margin-right: 15px; 
+    }
+       
+    ion-title {
+        color: #191A45;
+    }
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background: #ffffff;
+    }
+
+    .toolbar-title-md{
+        font-size: 14px;
+        font-family: "PoppinsMedium";
+    }
+    .content-md {
+        color: #191A45;
+        background-color: #f9fbfc;
+    }
+    .gridcl
+    {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-top: 12px !important;
+        padding-bottom: 5px !important;
+    }
+    .scroll-content {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+    ion-navbar[hidebackbutton] button[menutoggle] {
+        display: block !important;
+      }
+
+    .bar-buttons-md[left] {
+
+        display: flex !important;
+    }
+
+    .text-style
+    {
+        font-size: 16px;
+        color: #191A45; 
+        font-family: 'SourceSansProRegular'; 
+     
+    }
+
+    .text-headline{
+        font-size: 18px;
+        color: #484A6C;
+        font-family: "PoppinsMedium";  
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    .text-desc{
+        font-size: 18px;
+        font-family: 'SourceSansProRegular';
+        color: #191A45; 
+        margin-top: 13px;
+        margin-bottom: 5px;
+    }
+ion-textarea{
+    border: 1px solid #D7D7D7;
+}
+        
+.div-inner-left{
+    width:45%;
+    float:left;
+    
+}
+.div-inner-right{
+    width:45%;
+    float:right;
+}
+.div-text{
+    border: 1px solid #D7D7D7;
+    border-radius:6px;
+    text-align:center
+}
+.btn-create{
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        width: 100%;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 16px;
+}
+.item-md
+{
+     padding-left: 0px !important; 
+    color: #46476A;
+    background-color: #fff;
+    font-size: 14px !important;
+} 
+}

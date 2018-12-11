@@ -1,0 +1,88 @@
+page-campaigndetail {
+
+    .img-menu{
+        margin-left: 15px;
+    }
+    .img-chat{
+        margin-right: 12px;
+    }
+    .img-profile{
+        margin-right: 15px; 
+    }
+      
+    .scroll-content{
+        margin-top: 35px !important;
+    }
+
+    ion-title {
+        color: #191A45;
+    }
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background: #ffffff;
+    }
+
+    .toolbar-title-md{
+        font-size: 14px;
+        font-family: "PoppinsMedium";
+    }
+    .content-md {
+        color: #191A45;
+        background-color: #f9fbfc;
+    }
+
+    .gridcl
+    {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-top: 35px !important;
+        padding-bottom: 5px !important;
+    }
+    .scroll-content {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+
+    .card-style
+{
+    border: 1px solid #D7D7D7;
+    box-shadow: none;
+    border-radius: 5px;
+    width: 100%;
+}
+.tag 
+{
+    
+    color: #191A45;
+    font-weight: 900;
+    font-family: 'SourceSansProRegular';
+}
+.padding-style
+{
+    padding:16px; 
+}
+.swiper-container-android .swiper-slide, .swiper-wrapper {
+    width: 61px !important;
+    
+}
+.img-style
+{
+    border-radius: 30px;
+    height: 50px;
+    width: 50px;  
+}
+.p-tittle
+{
+    color:#191A45;    margin-top: 21px;   font-family: "SourceSansProBold"; 
+}
+ion-slides {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-top: 11px;
+}
+
+}

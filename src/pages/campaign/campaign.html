@@ -1,0 +1,61 @@
+<!--
+  Generated template for the CampaignPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-shadow no-border>
+
+    <ion-navbar hideBackButton="true">     
+        <ion-buttons left menuToggle="left" style="display: block !important;"> 
+          <button ion-button icon-only>
+                      <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+          </button>
+        </ion-buttons>
+      <ion-title text-center>Campaign</ion-title>
+      <ion-buttons end> 
+          <button ion-button icon-only>
+            <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+          </button>
+  </ion-buttons>
+
+  <ion-buttons end (click)="ProfileBtn()">
+          <button ion-button icon-only>
+                      <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+          </button>
+  </ion-buttons>
+    </ion-navbar>    
+
+</ion-header>
+
+
+<ion-content padding>  
+    <ion-grid no-padding no-margin class="gridcl">  
+<div>
+<p class="text-style">
+    You can see your campaigns that contain an offer for free service or create a new one.  
+</p>
+</div>
+<ion-list>
+  <ion-item *ngFor="let value of detailbox" class="item-style" (click)="GotoNext(value._id,value.invited,value.accepted,value.reviewed)">      
+  <ion-row>
+    <ion-col col-9>
+    <p class="title-style">{{value.title}}</p> 
+    <br>
+  <p class="subtitle-style">{{ value.recentview+" - "+value.invitepeople }}</p> 
+  </ion-col>
+  <ion-col col-3 class="arrow-style">    
+  <img src="assets/icon/arrow-forward.png" >
+  </ion-col>
+  
+      </ion-row>
+  </ion-item>
+  
+  </ion-list>
+  <ion-fab right bottom style="position: fixed;" (click)="AddCampaigns()" margin-right> 
+      <button  class="fab-button"  ion-fab >
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-fab>
+  </ion-grid>
+</ion-content>

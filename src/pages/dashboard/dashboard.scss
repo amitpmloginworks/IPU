@@ -1,0 +1,72 @@
+page-dashboard {
+
+    ion-title {
+        color: #191A45;
+    }
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background: #ffffff;
+    }
+
+    .toolbar-title-md{
+        font-size: 14px;
+        font-family: "PoppinsMedium"; 
+    }
+    .content-md {
+        color: #191A45;
+        background-color: #f9fbfc;
+    }
+
+
+
+    ion-card {
+        height:80px;
+        box-shadow:none !important;
+        border:1px solid #D7D7D7;
+        border-radius:5px !important; 
+        text-align: center;
+         }
+         .card-graph
+         {
+          height:auto;
+         }
+         .col {
+             padding:0px 
+         }
+         .heading-title
+         {
+             width: 30px;
+             color: #3096F7; 
+         }
+         .graph-details
+         {
+     
+             text-align: right;
+             margin-top: -18px;
+         }
+         .pad2
+         {
+             padding: 10px;
+         }
+         .pad1
+         {
+             padding: 15px;
+         }
+         .title
+         {
+             color: #3096F7;
+             font-size: 13px;
+             font-family: "SourceSansProSemibold";  
+         }
+         .card-md p{
+            font-family: "SourceSansProSemibold" !important; 
+         }
+         .scroll-content {
+            padding-left: 11px !important;
+            padding-right: 19px !important; 
+         }
+     
+         ion-card-header {
+             font-weight: bold;
+         }
+}

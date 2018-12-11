@@ -1,0 +1,54 @@
+<!--
+  Generated template for the ProfilenewitemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content padding class="modal-page" text-center ion-fixed scroll="false">
+  <div class="outer-div">
+    
+   
+      <ion-row >  
+          <ion-col col-8 class="col-12-tittle" style="font-size: 1.6rem">Add new item</ion-col>
+          <ion-col col-4 class="col-12-tittle">
+        <ion-icon (click)="close()"><img width="15" src="assets/icon/multiply.png"></ion-icon>
+          </ion-col>
+       </ion-row>
+    
+      <ion-row style="margin-top: 20px; display: inline-block;">
+          <ion-col col-12 class="col-12-tittle">Picture</ion-col>
+        </ion-row>
+
+        <ion-item style="margin-top: 6px;" (click)="uploadpicture()">
+             <!-- <ion-input type="text" readonly value="" [(ngModel)]="LocalimgPath" placeholder="Browse for file"></ion-input>   -->
+
+             <ion-label style="color:#A5A5A5;margin-left: 8px;">{{ LocalimgPath }}</ion-label>
+        </ion-item>  
+
+        <ion-row style="margin-top: 20px; display: inline-block;">
+            <ion-col col-12 class="col-12-tittle">Service Title</ion-col>
+         </ion-row>
+
+          <ion-item style="margin-top: 6px;">   
+              <ion-input type="text" value="" [(ngModel)]="ServiceTittle" placeholder="e.g. Customer Support"></ion-input> 
+            </ion-item>  
+          <ion-row style="margin-top: 20px; display: inline-block;">
+              <ion-col col-12 class="col-12-tittle">Price of service</ion-col>
+           </ion-row>
+
+            <ion-item style="margin-top: 6px;"> 
+                <ion-input type="number" value="" placeholder="e.g. 50$/hour" [(ngModel)]="ServicePrice"></ion-input>
+                </ion-item>  
+    
+            <ion-row>
+                <ion-col>  
+                        <button ion-button class="btn-mtop" (click)="SavedBTn()">  Upload Image   </button>
+                </ion-col>
+            </ion-row>
+            
+
+       
+          </div>
+</ion-content>
+

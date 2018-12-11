@@ -1,0 +1,93 @@
+page-code {
+    ion-title {
+        color: #191A45;
+    }
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background: #ffffff;
+    }
+
+    .toolbar-title-md{
+        font-size: 14px;
+        font-family: "PoppinsMedium";
+        margin-left: 60px;
+    }
+    .content-md {
+        color: #191A45;
+        background-color: #f9fbfc;
+    }
+    .gridcl
+    {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+        padding-top: 12px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .scroll-content {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+    .item-md
+    {
+        border: 1px solid #D7D7D7 !important;
+         padding-left: 0px !important; 
+        color: #46476A;
+        background-color: #fff;
+        font-size: 14px !important;
+        border-radius: 6px;
+    }
+    
+    .contenttittle
+    {
+        font-size: 18px;
+        font-weight: bold;
+        color: #191A45;
+        margin-top: 11px;
+        font-family: "PoppinsMedium";
+    }
+    .content-md {
+        color: #191A45;
+        background-color: #f9fbfc;
+    }
+    
+    .col-12-tittle{
+        font-size: 14px;
+        font-family: "SourceSansProSemibold";
+    }
+    .button-outline-md {
+        width: 98%;
+    }
+    .row-mtop{
+        margin-top: 37px; 
+    }
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #191A45;
+    }
+  
+    .p-f16
+    {
+        font-size: 16px;
+        font-family: 'SourceSansProRegular';
+    }
+    .text-input-md{
+        font-family: 'SourceSansProRegular'; 
+        font-size: 14px;
+        letter-spacing: 7px;
+        padding-left: calc(6vw - 12px);
+    }
+    .button-md{
+        font-family: "PoppinsSemibold";
+    }
+    .toolbar-title-md {
+        margin-right: 59px;
+    }
+    .item-md.item-block .item-inner {
+        border-bottom: none !important;
+    }
+}

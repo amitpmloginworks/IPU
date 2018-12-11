@@ -1,0 +1,70 @@
+<!--
+  Generated template for the ContactlistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-header no-shadow no-border>
+  <ion-navbar hideBackButton="true">    
+      
+          <ion-buttons left menuToggle="left" style="display: block !important;" >
+                  <button ion-button icon-only>
+                              <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                  </button>
+                </ion-buttons>
+
+    <ion-title text-center>Contact List</ion-title> 
+
+    <ion-buttons end> 
+          <button ion-button icon-only>
+            <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+          </button>
+  </ion-buttons>
+
+  <ion-buttons end>
+          <button ion-button icon-only>
+                      <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+          </button>
+  </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding> 
+      <ion-grid no-padding no-margin class="gridcl">
+
+<div style="background: #fff; border: 1px solid #d7d7d7;border-radius: 6px;margin-top: 25px;" >
+<div *ngIf="surveyForm"> 
+    <form [formGroup]="surveyForm">
+        <div formArrayName="answers">
+<div  *ngFor="let question of answers; let i = index" [formGroupName]="i">
+          <ng-container>
+            <div formArrayName="answer_by_user">
+              <div *ngFor="let choice of question.answers; let j = index" >
+                <ion-row no-padding no-margin >
+                        <ion-col col-2 style="max-width: 11%;" no-padding no-margin> 
+                    <ion-item no-padding no-margin> <ion-checkbox no-padding no-margin (ionChange)="onChange(choice.id,choice.name, $event.checked, i)" value="choice.id"></ion-checkbox> </ion-item>   
+                        </ion-col>  
+                        <ion-col col-6 no-padding no-margin> <p no-margin no-padding class="p-1">{{ choice.name }}</p> </ion-col>  
+                        <ion-col col-4 text-right no-padding no-margin> 
+                          <p no-margin no-padding class="p-1">{{ choice.id }}</p>
+                        </ion-col>
+                </ion-row> 
+              </div>
+            </div>
+          </ng-container>
+</div>  
+</div>  
+</form>
+</div>  
+</div>  
+<ion-fab right bottom style="position: fixed;" (click)="SearchBtn()" margin-right> 
+  <button  class="fab-button"  ion-fab >
+    <ion-icon name="arrow-dropright" mode="ios"></ion-icon>  
+  </button>
+</ion-fab>
+
+</ion-grid>                   
+</ion-content>

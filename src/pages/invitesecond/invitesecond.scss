@@ -1,0 +1,109 @@
+page-invitesecond {
+    ion-title {
+        color: #191A45;
+    }
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background: #ffffff;
+    }
+
+    .toolbar-title-md{
+        font-size: 14px;
+        font-family: "PoppinsMedium";
+    }
+    .content-md {
+        color: #191A45;
+        background-color: #f9fbfc;
+    }
+    .contenttittle
+    {
+        font-size: 18px;
+        margin-bottom: 12px;
+        color: #191A45;
+        margin-top: 7px;
+        font-family: "PoppinsMedium";
+    }
+    .contenttittle1
+    {
+        font-size: 18px;
+        margin-bottom: 12px;
+        color: #191A45;
+        margin-bottom: 0px;
+        margin-top: 13px; 
+        font-family: "PoppinsMedium";
+    }
+
+ 
+
+    .gridcl
+    {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-top: 12px !important;
+        padding-bottom: 5px !important;
+    }
+
+    .scroll-content {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+   
+
+    .img-menu{
+        margin-left: 15px;
+    }
+    .img-chat{
+        margin-right: 12px;
+    }
+    .img-profile{
+        margin-right: 15px; 
+    }
+
+    .btn-inviteuser{
+        font-family: "PoppinsSemibold"; 
+        width: 55%;
+        margin-top: 15px;
+    }
+    
+      .button-md {
+        box-shadow:none;
+        -webkit-box-shadow:none;
+      }
+
+      .item-md
+      {
+          border: 1px solid #D7D7D7 !important;
+           padding-left: 0px !important; 
+          color: #46476A;
+          background-color: #fff;
+          font-size: 14px !important;
+      }
+
+
+      // image slide ..
+
+      .swiper-container-android .swiper-slide, .swiper-wrapper {
+        width: 61px !important;
+    }
+     
+    .img-style
+    {
+        border-radius: 30px;
+        height: 50px;
+        width: 50px;  
+    }
+
+    .div-text{
+        border: 1px solid #d7d7d7;
+        padding: 12px;
+        font-size: 14px;
+        color: #46476a;
+        background: #fff; 
+        font-family: 'SourceSansProRegular';
+    }
+
+
+}

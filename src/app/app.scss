@@ -1,0 +1,73 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+
+.button-md
+{
+    height: 48px !important;
+    border-radius: 6px !important;
+    font-size: 15px !important;
+}
+
+
+.img-menu{
+    margin-left: 15px !important;
+}
+.img-chat{
+    margin-right: 13.18px !important;
+}
+.img-profile{
+    margin-right: 15px !important; 
+}
+
+.bar-button-md{
+    margin:0px !important;
+    padding: 0px !important;  
+}
+ion-buttons{
+    margin:0px !important;
+    padding: 0px !important;  
+}
+    .custom-popover .popover-content {
+        // width: 95% !important;
+        // top: 0px !important;
+        // left: 9px !important;
+
+        width: 100% !important;
+        top: 0px !important;
+        left: 0px !important;
+        }
+       
+            ion-popover{
+                background-color: #A5ABAF;
+            }
+
+            ion-loading.transparent {
+                .loading-wrapper {
+                  background: transparent;
+                  box-shadow: none;
+              
+                  .spinner-crescent circle {
+                    stroke-width: 8px;
+                  }
+                }
+              }
+            
+           
+     
+  

@@ -1,0 +1,70 @@
+<!--
+  Generated template for the RegistermainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header no-shadow no-border>
+    <ion-navbar >     
+      <ion-title text-center>Register</ion-title> 
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding> 
+
+  <ion-grid class="gridcl" >
+ 
+      
+    <ion-row  no-margin no-padding style="margin-top: 8px;">
+      <ion-col col-12 no-margin no-padding> 
+        <p class="p-f16" no-margin no-padding>
+            Registration to user is closed. You will need to get
+        </p> 
+        <p class="p-f16-bottom" no-margin no-padding>  
+            an invite to use the platform. However, you can
+        </p>
+        <p class="p-f16" no-margin no-padding>
+            register as a publish agent or provider.
+        </p>
+      </ion-col>
+    </ion-row>
+
+       
+          
+
+          <div style="margin-top: 20px;" > 
+              <div class="div-text-user" (click)="RegisterBtn('registerPublishAgent')"> 
+                <p no-margin no-padding class="headertext">Register as a publish agent</p> 
+                <p no-margin no-padding class="contestext">A publish agent is a Lorem ipsum dolor sit amet, consectet </p>
+                <p no-margin no-padding class="contestext">  adipiscing elit. Nullam lobortis, mauris vitae vestibulum  </p>
+                <p no-margin no-padding class="contestext" style="    margin-bottom: 27px;">   pharetra, neque lectus facilisis mauris, a iaculis lorem.   </p>
+              </div>
+            
+            </div>    
+
+            <ion-row no-margin no-padding style="margin-top: 33px;"><ion-col col-12 class="col-12-tittle" no-margin no-padding text-center>OR</ion-col></ion-row>
+
+
+            <div style="margin-top: 39px;"> 
+                <div class="div-text-user" (click)="RegisterBtn('registerProvider')"> 
+                    <p no-margin no-padding class="headertext">Register as a provider</p> 
+                    <p no-margin no-padding class="contestext">A provider is a Lorem ipsum dolor sit amet, consectet </p>
+                    <p no-margin no-padding class="contestext">  adipiscing elit. Nullam lobortis, mauris vitae vestibulum </p>
+                    <p no-margin no-padding class="contestext" style="    margin-bottom: 27px;">   pharetra, neque lectus facilisis mauris, a iaculis lorem. </p>
+                </div>
+                 
+</div>
+          </ion-grid>  
+  
+          <div class="div-footer"> 
+              <ion-row no-padding no-margin style="margin-top: 18px; margin-bottom: 20px;">
+                <ion-col col-12 text-center no-padding no-margin>   
+                <p no-padding no-margin>Already have an account? <a class="a-tittle" (click)="LoginBtn()" no-padding no-margin>Login!</a></p>
+              </ion-col>
+            </ion-row>
+            </div>
+
+</ion-content>
+

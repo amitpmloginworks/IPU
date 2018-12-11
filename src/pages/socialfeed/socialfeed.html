@@ -1,0 +1,85 @@
+<!--
+  Generated template for the SocialfeedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-shadow no-border>
+    <ion-navbar hideBackButton="true">       
+        <ion-buttons left menuToggle="left" style="display: block !important;">
+                    <button ion-button icon-only>
+                                <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                    </button>
+            </ion-buttons>
+      <ion-title text-center>Social feed</ion-title>  
+      <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+            </button>
+    </ion-buttons>
+    <ion-buttons end (click)="ProfileBtn()">
+            <button ion-button icon-only>
+                        <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+            </button>
+    </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid no-margin no-padding class="padleftright">
+      <ion-row margin-bottom><ion-col col-12 class="col-12-tittle" >Post something </ion-col></ion-row>
+      <ion-item inset> 
+        <ion-textarea rows="4" placeholder="What you want to post today?" [(ngModel)]="PostTxt"></ion-textarea>
+      </ion-item>
+      <ion-row no-margin no-padding style="border-left: 1px solid #2699FB !important; border-right: 1px solid #2699FB !important; border-bottom: 1px solid #2699FB !important; background: #fff;">
+        <ion-col col-12 no-margin no-padding >  
+        <div style=" margin-top: 8px; margin-left: 9px; margin-bottom: 8.93px;" (click)="uploadpicture()">
+            <img src="assets/imgs/ic_camera_enhance_24px.png"  > 
+            <span class="p-image">Attach an image</span> 
+        </div>
+      </ion-col>
+      </ion-row>
+  <button ion-button full class="btn-mtop" style="margin-bottom: 30px;" no-shadow no-border (click)="PostBtn()">     POST </button> 
+  
+        <ion-card style="padding: 18px; width:100%;border-radius: 6px;margin-top: 5px;" *ngFor="let item of socialList" no-margin no-padding>
+          <div style="display:flex "> 
+            <img style="height: 33px; width: 32px;" src="assets/icon/user.png" *ngIf="item.usricon==''"> 
+            <img style="height: 33px; width: 32px; border-radius: 50px;" src="http://res.cloudinary.com/dq9zfttmi/image/upload/b_rgb:222d31,c_crop/{{ item.usricon }}" *ngIf="item.usricon !=''">  
+            <p style="font-size: 14px;font-family: SourceSansProSemibold;
+            color: #2699FB; margin-top: 7px;margin-left: 10px;width: 100%;">{{ item.username }}</p>
+            <p style="width: 100%;font-family: SourceSansProSemibold;
+            color: #46476A; text-align: end; font-size: 14px; margin-top: 7px;">{{ item.recentview }}</p> 
+          </div>
+          <div class="text-box">
+            <p style="color: #46476A; font-family: SourceSansProRegular;">
+               {{ item.post_text }}
+            </p>
+          </div>
+      <div>
+        <img style=" border-radius: 4px; margin-top: 23px;" src="assets/icon/NoImageAvailable.jpg" *ngIf="item.image==''">
+        <img style=" border-radius: 4px; margin-top: 23px;" src="http://res.cloudinary.com/dq9zfttmi/image/upload/b_rgb:222d31,c_crop/{{ item.image }}" *ngIf="item.image !=''">
+      </div>
+      
+      <!-- <div style="margin-top: 30px; display: flex;margin-bottom: 15px;">
+        <img style="    height: 19px;
+        width: 19px;" src="assets/imgs/myconnection/Symbol56.png">
+        <p style="color:#2699FB;font-size:14px;font-weight:700;
+        MARGIN-LEFT: 6PX; font-family: PoppinsSemibold;">609</p>
+        <img style="   height: 19px;
+        width: 19px;
+        margin-left: 25px;" src="assets/imgs/myconnection/Symbol57.png">
+        <p style="color:#2699FB;font-size:14px;font-weight:700;
+        MARGIN-LEFT: 6PX; font-family: PoppinsSemibold;">120</p>
+
+        <p style="color: #2699FB; font-size: 14px;
+        font-weight: 700; text-align: end; width: 100%;font-family: PoppinsSemibold;">SHARE</p>
+
+      </div> -->
+
+    </ion-card>
+
+
+  </ion-grid>
+</ion-content>

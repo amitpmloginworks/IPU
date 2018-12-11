@@ -1,0 +1,74 @@
+<!--
+  Generated template for the InvitesecondPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-shadow no-border> 
+    <ion-navbar hideBackButton="true">    
+        
+        <ion-buttons left menuToggle="left" style="display: block !important;" >
+                    <button ion-button icon-only>
+                                <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                    </button>
+                  </ion-buttons>
+
+      <ion-title text-center>Invite agents</ion-title> 
+
+      <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+            </button>
+    </ion-buttons>
+
+    <ion-buttons end  (click)="ProfileBtn()">
+            <button ion-button icon-only>
+                        <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+            </button>
+    </ion-buttons>
+
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding> 
+        <ion-grid no-padding no-margin class="gridcl">
+
+
+                <ion-row > 
+                    <ion-col col-12 no-padding no-margin class="contenttittle">Agents Invited: {{ detailimgLen }}</ion-col>
+                </ion-row>
+
+                <ion-slides>   
+                    <ion-slide *ngFor="let image1 of detailimg" >
+                      <img class="img-style" src="{{ ImageUrl+image1.image }}" >      
+                    </ion-slide>
+                </ion-slides>
+
+
+
+                <ion-row >
+                    <ion-col col-12 no-padding no-margin class="contenttittle1">MESSAGE</ion-col>
+                </ion-row>
+
+
+
+<div style="    margin-top: 12px;">
+  <div class="div-text">  
+  
+    <p no-margin no-padding>    Hi, I want to invite you to my campaing that will   </p>
+    <p no-margin no-padding>   end on 24th of May. You will be able to test my  </p>
+    <p no-margin no-padding>     free service: UX Design.   </p>
+    <p no-margin no-padding style="margin-top: 17px;">   Let me know what you think and I'm waiting for a  </p>
+    <p no-margin no-padding> review and feedback! </p>
+  </div>
+    <!-- <ion-item> <ion-textarea rows="5" value=""></ion-textarea>    </ion-item> -->
+</div>           
+<button ion-button block class="btn-inviteuser" (click)="GotoNext()"> INVITE USER  </button> 
+
+        </ion-grid>
+    
+
+
+
+
+  </ion-content>

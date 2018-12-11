@@ -1,0 +1,39 @@
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+<ion-menu [content]="content"  side="left" id="menu1" >
+    <div style="width: 111%;height: 100%;position: relative;z-index: 1;" >
+        <ion-content style="color:white; position: absolute;z-index: 10">
+          <ion-list no-lines >
+  
+              <button menuClose="menu1" *ngIf="UserStatus" ion-item (click)="HomeUser()" style="background: transparent;padding-left: 20px; color: #191A45; padding-left: 20px;min-height: 63px !important; box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.16);">  
+                  <img src="assets/imgs/menuicons/home.png" style="width: 16px !important; margin-right: 15px;">Home
+                </button>
+
+                <button menuClose="menu1" *ngIf="ProviderStatus" ion-item (click)="HomeProvider()" style="background: transparent;padding-left: 20px; color: #191A45; padding-left: 20px;min-height: 63px !important; box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.16);">  
+                    <img src="assets/imgs/menuicons/home.png" style="width: 16px !important; margin-right: 15px;">Home
+                  </button>
+
+            <button menuClose="menu1" ion-item *ngFor="let p of pages;let i=index" (click)="openPage(p)" style="background: transparent;padding-left: 20px; color: #191A45; padding-left: 20px;min-height: 63px !important; box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.16);">
+              <img src="{{p.logo}}" style="width: 16px !important; margin-right: 15px;">{{p.title}}
+            </button>    
+ 
+            <button menuClose="menu1" ion-item (click)="logout()" style="background: transparent;padding-left: 20px; color: #191A45; padding-left: 20px;min-height: 63px !important; box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.16);">  
+              <img src="assets/imgs/menuicons/logout.png" style="width: 16px !important; margin-right: 15px;">Logout
+            </button>
+
+          </ion-list> 
+        </ion-content>
+      </div>
+      
+<style>
+  .label-md {
+    font-family: 'Quicksand', sans-serif !important;
+    color: #191A45;
+    font-size: 16px;
+    text-transform: initial;
+  }
+  </style>
+  
+
+</ion-menu>
+

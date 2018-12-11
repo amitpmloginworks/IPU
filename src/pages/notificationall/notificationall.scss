@@ -1,0 +1,79 @@
+page-notificationall {
+    ion-title {
+        color: #191A45;
+    }
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background: #ffffff;
+    }
+
+    .toolbar-title-md{
+        font-size: 14px;
+        font-family: "PoppinsMedium";
+    }
+    .content-md {
+        color: #191A45;
+        background-color: #f9fbfc;
+    }
+  
+    .img-menu{
+        margin-left: 15px;
+    }
+    .img-chat{
+        margin-right: 12px;
+    }
+    .img-profile{
+        margin-right: 15px; 
+    }
+
+    .contenttittle
+    {
+        font-size: 18px;
+        font-weight: bold;
+        color: #191A45;
+        margin-top: 7px;
+    }
+    .contenttittle1{
+        font-size: 18px;
+        font-weight: bold;
+        color: #191A45;
+        font-family: "PoppinsMedium";
+    }
+
+
+    .gridcl
+    {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-top: 12px !important;
+        padding-bottom: 5px !important;
+    }
+    .scroll-content {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+      
+    .img-style 
+    {
+    border-radius: 50px;
+    height: 47px;
+    width: 47px;
+    margin-left: 10px;
+    margin-top: 5px;
+    }
+    .p-1{
+        color:#191A45;
+        font-size: 12px;
+        font-family: "SourceSansProSemibold"; 
+    }
+    .p-2{
+        margin-top: 10px;
+        color:#3096F7;    
+        font-size: 18px;
+        font-family: "SourceSansProSemibold";
+    }
+
+}

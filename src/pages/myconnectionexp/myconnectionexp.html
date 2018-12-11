@@ -1,0 +1,230 @@
+<!--
+  Generated template for the MyconnectionexpPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header no-shadow no-border>
+    <ion-navbar hideBackButton="true">    
+        <ion-buttons left menuToggle="left" style="display: block !important;">  
+                    <button ion-button icon-only>
+                                <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                    </button>
+                  </ion-buttons>  
+      <ion-title text-center>{{ ProviderName }}</ion-title>  
+      <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+            </button>
+    </ion-buttons> 
+    <ion-buttons end (click)="ProfileBtn()">
+            <button ion-button icon-only>
+                        <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+            </button>
+    </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+
+
+<ion-content > 
+  <div style="padding-left: 5px; padding-right: 3px; margin-top: 15px;">
+<ion-card >
+ <div class="img-box">
+  <img class="img-profile1" src="{{ providerImage }}">       
+</div>
+<div style="text-align:center ; padding: 2px 6px 6px 0px;">  
+<p style="color:#2699FB;font-size: 18px;  font-family: SourceSansProSemibold;" no-margin no-padding>{{ providerId }}</p>  
+<p style="font-family: SourceSansProRegular;color: #46476A;font-size: 1.3rem;" >{{ providingServices }}</p> 
+</div>
+ 
+<div class="img-box">
+  <img class="img-star" src="{{ results1.image }}" *ngFor="let results1 of StarArr" (click)="goToReviews()"> 
+</div>   
+
+<div style="display: flex;justify-content: center;">  
+  <p style="  color: #46476A;font-size: 1.3rem; font-family: SourceSansProRegular;">{{ StatsAvg }} average rating ({{ statsReview }} reviews)</p>
+</div>
+<div class="cross-box">
+
+<div class="cross-box-circle" >   
+    <img class="img-star1" src="assets/imgs/myconnection/Group727.png" (click)="PublishBtn()">
+    <p class="text-genre">Publish</p>
+</div>
+<div class="cross-box-circle" >
+    <img class="img-star1" src="assets/imgs/myconnection/Group728.png">
+    <p class="text-genre">Start Chat</p>  
+  </div>
+  <div class="cross-box-circle"  >    
+      <img class="img-star1" src="assets/imgs/myconnection/Group729.png">
+      <p class="text-genre" >Pay</p>
+    </div>
+</div>
+ 
+<div class="detail-box"> 
+        <div  (click)="SendToNextPage()" *ngIf="UserProviderAgent">   
+                <p style="font-weight:700;color: #46476A;font-family: SourceSansProRegular;text-decoration: underline; text-align: center; margin-top: 10px;" no-padding no-margin> Agent Review
+                  </p>  
+            </div>
+
+  <div class="list-detail" (click)="openEmail(ProviderEmail)">  
+
+      <ion-icon class="icon-style" ios="ios-mail-outline" md="ios-mail-outline"></ion-icon>
+      <p style="font-weight:700;color: #46476A ;    font-family: SourceSansProRegular;">Email:</p>
+      <p style="color: #46476A;    font-family: SourceSansProRegular; " >{{ ProviderEmail }}</p>
+  </div>
+  <div class="list-detail list-top" (click)="call(ProviderPhone)">
+
+      <ion-icon class="icon-style" ios="md-call" md="md-call"></ion-icon>
+      <p style="font-weight:700;color: #46476A;    font-family: SourceSansProRegular;  ">Phone:</p>
+      <p style="color: #46476A;    font-family: SourceSansProRegular; " >{{ ProviderPhone }}</p>
+  </div>
+
+  
+
+  <!-- <div class="list-detail list-top">   
+      <p style="font-weight:700;color: #46476A;    font-family: SourceSansProRegular;  ">Payment: 
+
+        </p>
+      <p style="color: #46476A;    font-family: SourceSansProRegular; ">10$ / hour via Paypal</p>
+  </div> -->
+  <div class="list-detail list-top" (click)="openLink(ProviderWebsite)">
+
+      
+      <p style="font-weight:700;color: #46476A;    font-family: SourceSansProRegular;  ">Website: </p>
+      <p style="color: #46476A;    font-family: SourceSansProRegular; " >{{ ProviderWebsite }}</p>
+  </div>
+
+ <div class="list-detail list-top">
+
+      
+      <p style="font-weight:700; color: #46476A;    font-family: SourceSansProRegular;  ">Address:
+
+        </p>
+      <p style="color: #46476A;    font-family: SourceSansProRegular; "> {{ ProviderAddress }}</p>
+  </div>
+ 
+  
+ <div class="list-detail list-top">
+
+      
+    <p style="font-weight:700; color: #46476A;    font-family: SourceSansProRegular;  ">About:
+
+      </p>
+    <p style="color: #46476A;    font-family: SourceSansProRegular; "> </p>
+</div>
+
+
+</div>
+</ion-card>
+
+
+
+<ion-card style="padding: 15px;">
+<p class="heading" style="font-weight: 100">
+    SERVICES
+</p>
+
+<div class="service-style" *ngFor="let result of serviceListArr">  
+<div class="div-left" style="width:60%;"> 
+    <p style="color: #46476A;font-family: SourceSansProSemibold;">{{ result.servicelist }}</p>
+</div>
+<div  class="div-center">  
+    <img class="profile-small" src="{{ ImageUrl+result1.user_img }}" *ngFor="let result1 of result.servicepeople | slice:0:4;">      
+    <p  class="p-count" class="profile-small p-count" *ngIf="result.servicepeople.length>4">{{ result.servicepeople.length-4 }}</p>  
+</div> 
+<div class="div-right">
+        <!-- <img class="profile-small" src="assets/imgs/myconnection/Symbol56.png"> -->
+    <button ion-button icon-start clear small no-padding no-margin style="height: 2.1em !important;" *ngIf="!result.userPresent" (click)="ServiceBtn(result.servicelist)">            
+            <ion-icon name="heart-outline" style="color: #2c9cfb;margin-right: 2px;" no-padding no-margin></ion-icon>  
+     </button>
+
+     <button ion-button icon-start clear small no-padding no-margin style="height: 2.1em !important;" *ngIf="result.userPresent">      
+            <ion-icon name="heart" style="color: #2c9cfb;margin-right: 2px;" no-padding no-margin></ion-icon>  
+     </button>
+
+</div>
+</div>
+<!-- <div class="service-style">
+    <div class="div-left">
+        <p style="color: #46476A;font-family: SourceSansProSemibold;">Servive Name 3</p>
+    </div>
+    <div class="div-center">
+       <img  class="profile-small"  src="assets/icon/profile-pic.jpeg">
+        <img  class="profile-small"  src="assets/icon/profile-pic.jpeg">  
+    </div>
+    <div class="div-right">
+        <ion-icon ><img class="profile-small" src="assets/imgs/myconnection/Symbol56.png"></ion-icon>
+    </div>
+</div> -->  
+</ion-card>
+
+<ion-card style="padding:15px">
+  <div style="display:flex ">
+      <p style="    font-weight: 100;
+      color: #1C1D32;  font-family: SourceSansProRegular;">PORTFOLIO</p>
+    
+      <p class="text-p">See All</p>
+ </div>
+
+<div class="portdolio-image"> 
+<ion-row style="width: 100%;" [ngStyle]="(portfalioArr.length != '0')?{ 'height': '87px'  }:{  }"> 
+  <ion-col col-4 *ngFor="let result of portfalioArr;let i=index;" style="height: 200px;">
+  <img class="image-port" src="{{ ImageUrl+ result.image}}" style="height: 40%;" *ngIf="i==0">
+  <img class="image-port" src="{{ ImageUrl+ result.image}}" style="height: 40%;" *ngIf="i==1">
+  <div *ngIf="i==2" style="position: relative;text-align: center;height: 200px;">
+  <img class="image-port" src="{{ ImageUrl+ result.image}}" style="height: 40%;" *ngIf="i==2">  
+  <div *ngIf="portfalioArrlen !=0" style="position: absolute;top: 20%;left: 49%;transform: translate(-50%, -50%);color: #fff;">+{{ portfalioArrlen }}</div>   
+  </div>  
+  </ion-col>
+</ion-row>
+</div>
+
+</ion-card>
+
+<p class="heading" style="margin-left: 12px;">Latest Update from {{ providerId }}</p>  
+
+
+
+
+<ion-list>
+  <ion-card style="padding: 18px;" *ngFor="let result of ProviderPost">  
+
+    <div style="display:flex ">  
+      <img style="height: 33px; border-radius: 50%; width: 32px;" src="{{ ImageUrl+providerList.image }}">      
+      <p style="font-size: 14px; color: #2699FB; margin-top: 7px; margin-left: 10px;width: 100%;     font-family: SourceSansProSemibold;">{{ providerList.name+" "+providerList.lastname }}</p>
+      <p style="width: 100%; color: #46476A; text-align: end;
+      font-size: 14px; margin-top: 7px; font-family: SourceSansProSemibold;">{{ result.recentview }}</p>
+    </div>
+
+    <div class="text-box">
+      <p style="color: #46476A;    font-family: SourceSansProRegular;">
+          {{ result.post_text }} 
+      </p>
+    </div>
+
+<div>
+  <img style="border-radius: 4px;margin-top: 12px;" src="{{ ImageUrl+result.image }}" *ngIf="result.image != 'img'">   
+
+  <img style="border-radius: 4px;margin-top: 12px;" src="assets/icon/NoImageAvailable.jpg" *ngIf="result.image == 'img'">
+</div>
+    
+
+<div style="margin-top: 23px;    display: flex;">
+  <img style="height: 19px; width: 19px;" src="assets/imgs/myconnection/Symbol56.png">  
+  <p style="color:#2699FB;font-size:14px;font-weight:100;MARGIN-LEFT: 6PX;  font-family: SourceSansProRegular; ">609</p>
+  <p style=" color: #2699FB; font-size: 14px;font-weight: 100; text-align: end;width: 100%; font-size: 18px;font-family:  SourceSansProRegular;" (click)="ShareSocial(result.image,result.post_text)">SHARE</p>
+</div>
+
+
+
+  </ion-card>
+
+ 
+</ion-list>
+
+
+
+</div>
+</ion-content>

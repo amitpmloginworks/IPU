@@ -1,0 +1,82 @@
+page-quicksearchmodal {
+    .content-md{   
+        background-color: rgba(0,0,0,0.2);
+    }
+ 
+    .outer-div{
+        position: relative;
+        background: #fff;
+        text-align: center;
+        border: 1px solid #2699FB;
+        top: 63%;
+        transform: perspective(1px) translateY(-50%);
+    }
+
+    .inner-div
+{
+    display: block;
+    width: 100%;
+   
+}
+
+   .scroll-content{
+    padding: 15px !important;  
+    }
+
+    .p-1{
+        color: #191A45;
+        font-size: 12px;
+        font-family: 'SourceSansProRegular';
+    }
+    .p-2{
+        margin-top: 6px;
+        color: #2699FB;
+        font-size: 16px;
+        font-family: "SourceSansProSemibold";
+    }
+    
+    .img-style
+    {
+    border-radius: 50px;
+    height: 47px;
+    width: 47px;
+    margin-left: 10px;
+    margin-top: 4px;
+    }
+    .button-clear-md {
+        color: #46476A;
+        text-decoration: underline;
+        font-family: "SourceSansProSemibold";  
+        font-size: 14px !important;
+      } 
+      .subrows-tittle1{
+        width: 19%; 
+        float: left;
+        font-family: "SourceSansProBold";
+      }
+      .col12-img1{ 
+        text-align: left;
+        width: 80%; 
+        display: inline-block;
+        float: left;
+        font-family: "SourceSansProRegular";
+      }
+      .button-md {
+        box-shadow:none;
+        -webkit-box-shadow:none;
+      }
+      .fulllines{
+        width: 100%;
+        height: 1px;
+        background: #2699FB;  
+    }
+    .p-footer{
+        margin-left: 19px; 
+        font-size: 12px;
+        font-family: "SourceSansProSemibold";
+    }
+    .a-tittle{  
+        color: #2699FB;
+        text-decoration: underline;
+    } 
+}

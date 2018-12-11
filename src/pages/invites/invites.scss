@@ -1,0 +1,136 @@
+page-invites {
+   
+    ion-title {
+        color: #191A45;
+    }
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background: #ffffff;
+    }
+
+    .toolbar-title-md{
+        font-size: 14px;
+        font-family: "PoppinsMedium";
+    }
+    .content-md {
+        color: #191A45;
+        background-color: #f9fbfc;
+    }
+  
+    .img-menu{
+        margin-left: 15px;
+    }
+    .img-chat{
+        margin-right: 12px;
+    }
+    .img-profile{
+        margin-right: 15px; 
+    }
+
+    .gridcl
+    {  
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-top: 12px !important;
+        padding-bottom: 5px !important;
+    }
+    .scroll-content {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+    .p-f16
+    {
+        font-size: 13px;
+        color: #191A45;
+        font-family: "SourceSansProSemibold";  
+    }
+
+    .p-f16-bottom  
+    {
+        margin-bottom: 7px;
+        margin-top: 7px;
+        font-size: 13px;
+        color: #191A45;
+        font-family: "SourceSansProSemibold";  
+    }
+
+    .col-12-tittle{
+        margin-top: 15px;
+        font-size: 14px;
+        font-family: "SourceSansProSemibold";  
+    }
+
+    .item-md
+    {
+        border: 1px solid #D7D7D7 !important;
+         padding-left: 0px !important; 
+        color: #46476A;
+        background-color: #fff;
+        font-size: 14px !important;
+    }
+    
+    .row-mtop{
+        margin-top: 15px; 
+    }
+
+    .button-md{
+        background-color: #2699FB;
+        width: 50%;
+        border-radius: 3px !important;
+    }
+
+    .div-text-user {
+        border: 1px solid #d7d7d7;
+        padding: 12px;
+        font-size: 14px;
+        color: #46476a;
+        background: #fff; 
+        font-family: 'SourceSansProRegular';
+    }
+    .button-md{
+        font-family: "PoppinsSemibold";
+    }
+
+
+    .item-md.item-input.input-has-focus .item-inner {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .list-md .item-input.input-has-focus:last-child {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .list-md .item-input.input-has-focus:last-child .item-inner {
+        box-shadow: none;
+      }
+      
+      .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner {
+        box-shadow: none;
+      }
+      
+      .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
+
+ 
+}

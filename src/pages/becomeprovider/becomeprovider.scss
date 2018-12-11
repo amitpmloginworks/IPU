@@ -1,0 +1,88 @@
+page-becomeprovider { 
+    ion-title {
+        color: #191A45;
+    }
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background: #ffffff;
+    }
+ 
+    .toolbar-title-md{
+        font-size: 14px;
+        font-family: "PoppinsMedium";
+    }
+    .content-md {
+        color: #191A45;
+        background-color: #f9fbfc;
+    }
+
+    .gridcl
+    {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-top: 12px !important;
+        padding-bottom: 5px !important;
+    }
+
+    .scroll-content {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .img-menu{
+        margin-left: 15px;
+    }
+    .img-chat{
+        margin-right: 12px;
+    }
+    .img-profile{
+        margin-right: 15px; 
+    }
+
+            .img-style
+            {
+                border-radius: 50%;
+                height: 120px;
+                width: 120px;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .item-md
+            {
+                border: 1px solid #D7D7D7 !important;
+                 padding-left: 0px !important; 
+                color: #46476A;
+                background-color: #fff;
+                font-size: 14px !important;
+            }
+        
+            .col-12-tittle{ 
+                font-family: "SourceSansProSemibold";
+                font-size: 14px;
+                color:#191A45;
+                margin-bottom: 5px;
+            }
+        
+            .p-f16
+            {
+                font-size: 16px;
+                color: #191A45;
+                font-family: "SourceSansProSemibold";  
+            }
+
+            .mtop-rows{
+                margin-top:12px;
+            }
+            .button-md{
+                margin-top: 25px;
+                margin-bottom: 29px;
+                width: 50%; 
+                font-family: "PoppinsSemibold";
+            }
+            .item-md.item-block .item-inner {
+                border-bottom: none !important;
+            }
+}

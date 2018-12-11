@@ -1,0 +1,80 @@
+<!--
+  Generated template for the MyconnectionpayPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-header no-shadow no-border>  
+  <ion-navbar hideBackButton="true">     
+    <ion-buttons left menuToggle="left" style="display: block !important;">
+                    <button ion-button icon-only>
+                                <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                    </button>
+                  </ion-buttons>
+      <ion-title text-center>{{ HeaderTittle }}</ion-title> 
+      <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+            </button>
+    </ion-buttons>
+    <ion-buttons end (click)="ProfileBtn()">
+            <button ion-button icon-only>
+                        <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+            </button>
+    </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding> 
+        <ion-grid no-padding no-margin >
+  
+                <ion-row class="gridcl" style="margin-top: 2px;" no-margin no-padding *ngIf="ReviewStatus">
+                    <ion-col col-12 no-padding no-margin class="contenttittle">Amount to pay</ion-col>
+                    <ion-col col-12 no-padding no-margin > 
+  
+                        <ion-item > <ion-input readonly="true" type="number" value="" placeholder="Input your text" [(ngModel)]="amount"></ion-input>    </ion-item>
+       
+                    
+                    </ion-col> 
+                </ion-row>
+  
+
+  <ion-row class="ionrows1 padleftright" no-margin no-padding> <ion-col col-12 text-left class="contenttittle2" no-margin no-padding>YOUR RATING</ion-col> </ion-row>
+  
+  <div class="padleftright">
+ 
+  <ion-row style="margin-top: 6.5px;margin-bottom: 32.48px;" no-padding no-margin>
+          <ion-col col-12 >
+              <span *ngFor=" let image of images; let i = index ">
+                  <img id=image_{{i}}  src="{{ image }}" (click)="giveRating(i)">
+                </span>
+           <!-- <img  src="assets/imgs/myconnection/star.png">
+           <img  src="assets/imgs/myconnection/star.png">
+           <img  src="assets/imgs/myconnection/star.png">
+           <img  src="assets/imgs/myconnection/star.png">
+           <img  src="assets/imgs/myconnection/star.png"> -->
+          </ion-col>
+   </ion-row> 
+
+   <ion-row no-margin no-padding style="margin-bottom: 5px;">
+      <ion-col col-12 text-left class="contenttittle2" no-margin no-padding>YOUR FEEDBACK</ion-col> 
+  </ion-row>
+
+
+   <ion-item >
+      <ion-textarea placeholder="Write a detailed review about the experience" rows="9" [(ngModel)]="review"></ion-textarea> 
+   </ion-item>
+
+   <button ion-button full class="btn-inviteuser" (click)="SaveBtn()" *ngIf="ReviewStatus"> Review  </button>  
+   <button ion-button full class="btn-inviteuser" (click)="SaveRateBtn()" *ngIf="RateStatus"> Rate  </button>    
+  </div>
+            
+
+        </ion-grid>
+    
+  </ion-content>
+  
+  

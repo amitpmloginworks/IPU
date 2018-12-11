@@ -1,0 +1,144 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-shadow no-border>
+    <ion-navbar hideBackButton="true">    
+        <ion-buttons left menuToggle="left" style="display: block !important;" >
+                    <button ion-button icon-only>
+                                <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                    </button>
+                  </ion-buttons>
+
+      <ion-title text-center>My Profile</ion-title> 
+
+      <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat2.png">
+            </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover()">
+                        <img class="img-profile" src="assets/imgs/menuicons/notify.png">
+            </button>
+    </ion-buttons>
+
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>   
+   
+        <ion-segment [(ngModel)]="chooseOptions" >
+            <ion-segment-button  value="Create">
+           <p class="text-header">PERSONAL DETAILS</p>
+            </ion-segment-button>
+            <ion-segment-button value="list"    style="background-color: #fff;">
+                <p class="text-header"> BADGES</p> 
+            </ion-segment-button>
+          </ion-segment> 
+
+          <ion-grid no-padding no-margin class="gridcl">
+          <div *ngIf="chooseOptions=='Create'">
+                 
+             
+   <ion-row class="rows-mtop">  
+      <ion-col col-12 text-center>   
+       <img class="img-style" src="{{ ImageUrl+imagePath }}" (click)="uploadpicture()">
+      </ion-col>
+    
+       </ion-row>
+   
+
+   
+       <div class="tittlediv1">  
+           <div class="tittlediv2">
+               <div class="tittlediv3"> FIRST NAME </div>
+           </div>
+           
+       <div class="tittlediv4"></div>
+         <div class="tittlediv5">
+             <div class="tittlediv6"> LAST NAME </div>
+         </div>
+       </div>
+   
+   
+       <div class="contentdiv-out">
+           <div class="contentdivlr">
+               <ion-item > <ion-input  type="text" [(ngModel)]="FirstName"  ></ion-input> </ion-item>
+           </div>
+            
+           <div class="contentdiv-center"></div>
+         <div class="contentdivlr">
+             <ion-item>  <ion-input  type="text"  [(ngModel)]="LastName"  ></ion-input>    </ion-item>
+         </div>
+   
+       </div>  
+   
+    
+       <ion-row style="margin-top: 20px; display: inline-block;">
+         <ion-col col-12 class="col-12-tittle">EMAIL</ion-col>
+      </ion-row>
+       <ion-item style="margin-top: 6px;"> <ion-input type="email" value="" [(ngModel)]="email" ></ion-input>    </ion-item>
+   
+   
+       <ion-row><ion-col col-12 class="col-12-tittle">PHONE </ion-col></ion-row>
+       <ion-item> <ion-input type="text" value="" [(ngModel)]="phoneNo"></ion-input>    </ion-item>
+   
+      
+   
+          <button ion-button full class="btn-mtop" (click)="SaveBtn()">    
+       Save
+       </button> 
+   
+
+            </div>
+            <div *ngIf="chooseOptions=='list'">
+
+                <ion-row  class="rowsbagde">
+                    <ion-col col-3 style=" max-width: 21%;">
+                     <img class="img-style-bagde" src="assets/imgs/profile/Group693.png">
+                    </ion-col>
+                    <ion-col col-9>  
+                     <p no-margin no-padding class="p1-bagde">Bronze Member</p>  
+                     <p no-margin no-padding class="p2-bagde">Invite 5 users - earned 2 weeks ago</p> 
+                    </ion-col>
+                     </ion-row> 
+
+                     <ion-row  class="rowsbagde">
+                        <ion-col col-3 style=" max-width: 21%;">
+                         <img class="img-style-bagde" src="assets/imgs/profile/Group694.png">
+                        </ion-col>
+                        <ion-col col-9>  
+                         <p no-margin no-padding class="p1-bagde">Silver Member</p>  
+                         <p no-margin no-padding class="p2-bagde">Invite 15 users - earned 3 days ago</p> 
+                        </ion-col>
+                         </ion-row> 
+
+                         <ion-row  class="rowsbagde">
+                            <ion-col col-3 style=" max-width: 21%;">
+                             <img class="img-style-bagde" src="assets/imgs/profile/Group695.png">
+                            </ion-col>
+                            <ion-col col-9>  
+                             <p no-margin no-padding class="p1-bagde1">Gold Member</p>  
+                             <p no-margin no-padding class="p2-bagde1">Invite 25 users - Invite 10 more users to earn it!</p> 
+                            </ion-col>
+                             </ion-row> 
+
+                             <ion-row  class="rowsbagde">
+                                <ion-col col-3 style=" max-width: 21%;">
+                                 <img class="img-style-bagde" src="assets/imgs/profile/Group696.png">
+                                </ion-col>
+                                <ion-col col-9>  
+                                 <p no-margin no-padding class="p1-bagde1">Other Badge Name</p>  
+                                 <p no-margin no-padding class="p2-bagde1">Get hired 3 times - Get hired 1 more time to earn it!</p> 
+                                </ion-col>
+                                 </ion-row> 
+
+
+                </div>
+      </ion-grid>
+</ion-content>

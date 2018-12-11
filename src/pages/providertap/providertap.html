@@ -1,0 +1,215 @@
+<!--
+  Generated template for the ProvidertapPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-header no-shadow no-border>
+  <ion-navbar hideBackButton="true">       
+    <ion-buttons left menuToggle="left" style="display: block !important;"> 
+                  <button ion-button icon-only>
+                              <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                  </button>
+                </ion-buttons>
+
+    <ion-title text-center>{{ Username }}</ion-title> 
+
+    <ion-buttons end> 
+          <button ion-button icon-only>
+            <img  class="img-chat" src="assets/imgs/menuicons/menurighticon.png">
+          </button>
+  </ion-buttons>
+
+    <ion-buttons end> 
+          <button ion-button icon-only>
+            <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+          </button>
+  </ion-buttons>
+
+  <ion-buttons end (click)="ProfileBtn()"> 
+          <button ion-button icon-only>
+                      <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+          </button>
+  </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding> 
+      <ion-grid no-padding no-margin  [ngClass]="{'gridopacity':flag, 'gridcl':!flag}"> 
+
+
+              <ion-row [ngClass]="{'bkopacity':flag, 'bkopacity-without':!flag}" style="    margin-bottom: 10px;">
+                  <ion-col col-9 no-padding no-margin class="contenttittle">Recommend a provider!</ion-col>
+
+                  <ion-col col-3 no-padding no-margin text-right>  
+                          <p class="p-inviteone"no-margin no-padding>INVITE ONE</p>
+                  </ion-col>
+              </ion-row>
+
+              <!-- <div>
+                              <ion-searchbar no-padding no-margin placeholder="Search by contacts/username/phone number" class="custom-search" [(ngModel)]="myInput" [showCancelButton]="true"  (ionInput)="getItems($event)"  no-shadow no-border>
+                                      </ion-searchbar>                   
+              </div> -->  
+
+              <div >            
+                <ion-item  style="border: 1px solid #3096F7;" (click)="PublishClickBtn()" no-lines>
+               <p >{{ SrcArrUsername }}</p>
+                  <button ion-button clear  type="button" item-right  > <ion-icon style="font-size: 1.6em;" name="search"> </ion-icon> </button>
+              </ion-item>
+            </div>
+ 
+             
+              <div style="background: #fff; position: absolute; top: 91px; z-index: 100;  width: 92%;border: 1px solid #d7d7d7;margin-top: 10px;border-radius: 6px;" *ngIf="Srcres" >  
+                <ion-row >
+                  <ion-col col-3 style="max-width: 19%;">
+                   <img class="img-style" src="assets/icon/profile-pic.jpeg">
+                  </ion-col>
+                  <ion-col col-9> 
+                   <p no-margin no-padding class="p-src2">Mihai Petrea</p>
+                   <p no-margin no-padding class="p-src1">Provider</p> 
+                  </ion-col>
+                </ion-row> 
+
+   <div class="fullline-src"></div> 
+   <ion-row style="    opacity: 0.6;">
+    <ion-col col-3 style="max-width: 19%;">
+     <img class="img-style" src="assets/icon/profile-pic.jpeg">
+    </ion-col>
+    <ion-col col-9> 
+     <p no-margin no-padding class="p-src3">Mihai Andrew</p> 
+     <p no-margin no-padding class="p-src4">User</p> 
+    </ion-col>
+</ion-row> 
+
+<div class="fullline-src"></div> 
+
+
+   <ion-row > 
+    <ion-col col-3 style="max-width: 19%;">
+     <img class="img-style" src="assets/icon/profile-pic.jpeg">
+    </ion-col>
+    <ion-col col-9> 
+     <p no-margin no-padding class="p-src2">Jhone Mihai</p>
+     <p no-margin no-padding class="p-src1">Unregistered</p> 
+    </ion-col>
+</ion-row> 
+              </div>
+
+
+
+
+
+<div [ngClass]="{'bkopacity':flag, 'bkopacity-without':!flag}">
+
+<div style="    margin-top: 19.5px;" >
+
+  
+      <ion-row style="background: #fff; border: 1px solid #d7d7d7;margin-top: 6.5px;border-radius: 6px;" *ngFor="let result of ProviderArrList;let i =index" >    
+              <ion-col col-3 style=" max-width: 19%;">
+               <img class="img-style" src="{{ 'http://res.cloudinary.com/dq9zfttmi/image/upload/b_rgb:222d31,c_crop,r_max/b_rgb:222d31/'+result.image }}">
+              </ion-col>  
+              <ion-col col-8> 
+               <p no-margin no-padding class="p-2">{{ result._id }}</p>
+               <p no-margin no-padding class="p-1">{{ result.providing.services }}</p> 
+              </ion-col>
+              <ion-col col-1 text-right style="flex: 0 0 14.33333%;  max-width: 14.33333%;" (click)="OpenCloseArrow( result.email,result.phone,result.providing.website,result.address,i,result._id)"> 
+                            <img class="img-arrowdown" src="assets/icon/arrow-down.png"  id="arrowdown_{{i}}">   
+                              <img class="img-arrowdown" src="assets/icon/arrow-up.png" style="display: none;"  id="arrowup_{{i}}">
+              </ion-col>
+
+              <div id="x_{{i}}" style="display: none;" > 
+              <ion-col col-12   style="margin-top:8px;" no-margin no-padding>
+                 <ion-row no-margin no-padding>
+                         <!-- <ion-col col-12 margin-left no-margin no-padding> 
+                                 <div style="width:100%;">
+                                      <div class="subrows-tittle">Shared Connections: </div>
+                                      <div class="col12-img"> 
+                                              <img src="assets/imgs/menuicons/profile.png">
+                                              <img src="assets/imgs/menuicons/profile.png">
+                                              <img src="assets/imgs/menuicons/profile.png">
+                                      </div>  
+                                 </div>  
+                      </ion-col> -->       
+
+                      <ion-col col-12 margin-left no-margin no-padding > 
+                                      <div style="width:100%;">
+                              <div class="subrows-tittle1" style="width: 10.5%;">Email:</div> 
+                              <div class="col12-img1" style="width: 89%;"> {{ ProviderEmail }}</div>  
+                              </div>
+                       </ion-col>
+                      <ion-col col-12 margin-left no-margin no-padding style="margin-top: 7px;"> 
+                                      <div style="width:100%;">
+                                 <div class="subrows-tittle1">Phone:</div>
+                                 <div class="col12-img1">     {{ ProviderPhone }} </div>  
+                                 </div> 
+                      </ion-col>
+                      <ion-col col-12 margin-left no-margin no-padding style="margin-top: 7px;"> 
+                        <div style="width:100%;">
+                   <div class="subrows-tittle1">Rating:</div> 
+                   <div class="col12-img1">    {{ StatsAvg }}* ({{ statsReview }} reviews) </div>  
+                   </div> 
+        </ion-col>
+        <ion-col col-12 margin-left no-margin no-padding style="margin-top: 7px;"> 
+          <div style="width:100%;">
+     <div class="subrows-tittle">Website:</div>
+     <div class="col12-img">   {{ ProviderWebsite }} </div>  
+     </div> 
+</ion-col>
+<ion-col col-12 margin-left no-margin no-padding style="margin-top: 7px;"> 
+  <div style="width:100%;">
+<div class="subrows-tittle">Address:</div>
+<div class="col12-img">   {{ ProviderAddress }} </div>    
+</div> 
+</ion-col>  
+                         <ion-col col-4 text-left no-margin no-padding style="margin-top: 11px !important;margin-bottom: 11px !important;">
+                           <button ion-button icon-start clear small no-padding no-margin margin-left style="    height: 30px !important; " (click)="InvitePublishBtn(i)"> <div style="font-size: 15px;text-decoration: underline;">PUBLISH</div> </button> 
+                         </ion-col>
+                         <ion-col col-4 text-center no-margin no-padding style="margin-top: 11px !important;margin-bottom: 11px !important;">
+                              <button ion-button icon-start clear small no-padding no-margin style="    height: 30px !important; "> <div style="font-size: 15px;text-decoration: underline;">CHAT</div> </button>
+                         </ion-col>
+                         <ion-col col-4 text-center no-margin no-padding style="margin-top: 11px !important;margin-bottom: 11px !important;">
+                      <button ion-button icon-start clear small no-padding no-margin  style="height: 30px !important; " (click)="SeeDetailBtn(i)"> <div style="    font-size: 15px;text-decoration: underline;">SEE DETAILS</div> </button>
+                         </ion-col>
+                 </ion-row>     
+              
+              </ion-col>
+              </div>
+
+       </ion-row> 
+
+
+
+<ion-row class="ionrows1" no-padding no-margin>      
+      <ion-col no-padding no-margin col-12 text-left class="contenttittle2" (click)="BackNav()">BACK TO RECENT PROVIDERS</ion-col>
+  </ion-row>
+</div>
+          
+</div>    
+
+      </ion-grid>  
+  
+
+
+    
+ 
+
+</ion-content>
+<ion-footer>
+  <div class="div-footer">  
+    <ion-row style="margin-left: 12px; margin-right: 12px;margin-top: 5px;margin-bottom: 10px;">
+        <ion-col col-5>
+                <button ion-button full class="btn-inviteuser" (click)="InviteUserBtn()"> INVITE USER  </button> 
+        </ion-col>
+        <ion-col col-7>
+                <button ion-button  outline style="width: 100%;" (click)="PublishAgentBtn()"> BECOME PUBLISH AGENT </button> 
+            </ion-col>
+    </ion-row>
+        <ion-row style="margin-bottom: 15px;"><ion-col col-12 text-center> 
+                 
+          <p class="p-footer" no-padding no-margin>Want to offer services? <a class="a-tittle" (click)="ProviderBtn()">Become a provider </a></p>
+        </ion-col></ion-row>
+</div>
+</ion-footer>

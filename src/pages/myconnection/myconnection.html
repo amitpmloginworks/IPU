@@ -1,0 +1,96 @@
+<!--
+  Generated template for the MyconnectionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header no-shadow no-border>
+    <ion-navbar hideBackButton="true">     
+        <ion-buttons left menuToggle="left" style="display: block !important;"> 
+                  <button ion-button icon-only>
+                              <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                  </button>
+                </ion-buttons>
+    <ion-title text-center>My connections</ion-title> 
+    <ion-buttons end> 
+          <button ion-button icon-only>
+            <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+          </button>
+  </ion-buttons>
+  <ion-buttons end (click)="ProfileBtn()">
+          <button ion-button icon-only>
+                      <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+          </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding> 
+      <ion-grid no-padding no-margin >
+
+
+              <ion-row class="gridcl" style="margin-top: 2px;">
+                  <ion-col col-12 no-padding no-margin class="contenttittle">Search for a connection</ion-col>
+                  <ion-col col-12 no-padding no-margin text-right> 
+
+                      <ion-searchbar no-padding no-margin placeholder="Please enter the username" class="custom-search" [(ngModel)]="myInput" [showCancelButton]="true"   no-shadow no-border (ionInput)="getItems($event)">
+                        </ion-searchbar> 
+                  
+                  </ion-col>
+              </ion-row>
+
+<div class="fulllines"></div>
+
+<div class="padleftright">
+    <!-- <ion-row style="background: #fff; border: 1px solid #d7d7d7;margin-top: 6.5px;border-radius: 6px;margin-bottom: 10.85px;" no-padding no-margin>
+        <ion-col col-3 style=" max-width: 18%;">
+         <img class="img-style" src="assets/imgs/inviteagent/image.png">
+        </ion-col>
+        <ion-col col-8> 
+         <p no-margin no-padding class="p-2">Username will be here<img src="assets/imgs/briefcase.png" style="margin-left: 6px;"></p>  
+         <p no-margin no-padding class="p-1">Profession will be below - Provider</p> 
+        </ion-col>
+        <ion-col col-1 text-center text-wrap no-padding no-margin style="flex: 0 0 15.33333%;  max-width: 15.33333%;background: #3096F7; color: #fff;border-bottom-right-radius: 6px; border-top-right-radius: 6px;"> 
+            <p no-margin no-padding margin-top>Profit:</p> 
+            <p no-margin no-padding >12$</p>   
+        </ion-col>
+ </ion-row> 
+
+ <ion-row style="background: #fff; border: 1px solid #d7d7d7;margin-top: 6.5px;border-radius: 6px;margin-bottom: 10.85px;" no-padding no-margin>
+    <ion-col col-3 style=" max-width: 18%;">
+     <img class="img-style" src="assets/imgs/inviteagent/image.png">
+    </ion-col>
+    <ion-col col-8> 
+     <p no-margin no-padding class="p-2">Username will be here</p> 
+     <p no-margin no-padding class="p-1">Profession will be below - User</p> 
+    </ion-col>
+    <ion-col col-1 text-center text-wrap no-padding no-margin style="flex: 0 0 15.33333%;  max-width: 15.33333%;background: #3096F7; color: #fff;border-bottom-right-radius: 6px; border-top-right-radius: 6px;"> 
+        <p no-margin no-padding margin-top>Profit:</p> 
+        <p no-margin no-padding >12$</p>   
+    </ion-col>
+</ion-row>  -->
+ 
+<ion-row style="background: #fff; border: 1px solid #d7d7d7;margin-top: 6.5px;border-radius: 6px;margin-bottom: 10.85px;" no-padding no-margin *ngFor="let result of connectionArr">
+    <ion-col col-3 style=" max-width: 18%;">  
+   <img class="img-style" src="{{ ImageUrl+result.user_image}}" *ngIf="result.user_image !=undefined"> 
+     <img class="img-style" src="assets/icon/user.png" *ngIf="result.user_image==undefined"  > 
+
+    </ion-col>
+    <ion-col col-8> 
+     <p no-margin no-padding class="p-2">{{ result.full_name }}</p>  
+     <p no-margin no-padding class="p-1">Profession will be below - {{ result.connection_type }}</p> 
+    </ion-col>
+    <ion-col col-1 text-center text-wrap no-padding no-margin style="flex: 0 0 15.33333%;  max-width: 15.33333%;background: #3096F7; color: #fff;border-bottom-right-radius: 6px; border-top-right-radius: 6px;"> 
+        <p no-margin no-padding margin-top>Profit:</p> 
+        <p no-margin no-padding >{{ result.profit }}$</p>   
+    </ion-col>
+</ion-row>
+
+</div>
+          
+
+</ion-grid>
+  
+</ion-content>
+

@@ -1,0 +1,237 @@
+page-profileagent {
+    ion-title {
+        color: #191A45;
+    }
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background: #ffffff;
+    }
+
+    .toolbar-title-md{
+        font-size: 14px;
+        font-family: "PoppinsMedium";
+    }
+    .content-md {
+        color: #191A45;
+        background-color: #f9fbfc;
+    }
+
+    .gridcl
+    {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-top: 12px !important;
+        padding-bottom: 5px !important;
+    }
+
+    .scroll-content {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+   
+
+    .img-menu{
+        margin-left: 15px;
+    }
+    .img-chat{
+        margin-right: 12px;
+    }
+    .img-profile{
+        margin-right: 15px; 
+    }
+
+    .text-header{
+        text-align:center;
+        margin-top: 9px;
+        color : #ACACBC;
+        font-size : 14px;
+        font-family: "PoppinsLight";  
+        letter-spacing: 0.08rem;
+        }
+
+        .segment-md .segment-button{
+            background-color: #fff;
+            padding:0px;
+            opacity: 1;
+            height:5.2rem;
+            } 
+            
+            .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+                border-color: #3096F7;
+                opacity: 1;
+                
+            }
+            
+            .segment-activated p {
+                color: #3096F7 !important;
+            }
+
+            ion-segment {
+                background-color:#fff;
+            }
+
+            .img-style
+            {
+                border-radius: 50%;
+                height: 120px;
+                width: 120px;
+            }
+
+            .p-1{
+                margin-top: 6px;
+                color:#46476A;
+                font-size: 14px;
+            }
+            .p-2{
+                margin-top: 6px;
+                color:#3096F7;    
+                font-size: 14px;
+            }
+
+            .item-md
+            {
+                border: 1px solid #D7D7D7 !important;
+                 padding-left: 0px !important; 
+                color: #46476A;
+                background-color: #fff;
+                font-size: 14px !important; 
+                border-radius: 6px;
+            }
+         .col-12-tittle1{
+            font-size: 14px;
+            color:#191A45;
+         }
+            .col-12-tittle{ 
+                font-family: "SourceSansProSemibold";
+                font-size: 14px;
+                color:#191A45;
+                margin-top: 10px;
+            }
+        
+            .tittlediv1{
+                display: block; width: 100%;    padding-top: 8px; margin-top:15px;
+            }
+            .tittlediv2{
+                display: inline-block;width: 47%; float: left;text-align: left;
+            }
+            .tittlediv3{
+                margin-top: 6px; color:#191A45;margin-bottom: 6px; font-size: 14px;      font-family: "SourceSansProSemibold";
+            }
+        
+            .tittlediv4{
+                display: inline-block;width: 6%;height: 1px;float: left;text-align: left;
+            }
+            .tittlediv5{
+                width:60%;display: inline-block;width: 47%;float: left;text-align: left;
+            }
+            .tittlediv6{
+                margin-top: 6px; color:#191A45;margin-bottom: 6px; font-size: 14px;      font-family: "SourceSansProSemibold";
+            }
+            .contentdiv-out{
+                height: 40px;display: block;width: 100%;    margin-bottom: 3px;
+            }
+            .contentdivlr{
+                display: inline-block;width: 47%;height: 40px;float: left;text-align: left;
+            }
+            .contentdiv-center{
+                display: inline-block;width: 6%;height: 40px;float: left;text-align: left;
+            } 
+            
+            .btn-mtop{ 
+              margin-top: 80px;
+            }
+            .rows-mtop
+            {
+                margin-top: 14px;  
+            }
+            .div-footer{
+                margin-top: 10px; background: #fff;
+            }
+            .a-tittle{ 
+                color: #2699FB;
+            } 
+             
+            .img-style-bagde 
+    {
+    border-radius: 50%; 
+    height: 55px;
+    width: 55px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 1px;
+    }
+    .rowsbagde{
+        border: 1px solid #d7d7d7;
+        background:#fff;
+        margin-bottom: 15px;
+    }
+    .p1-bagde{
+        margin-top: 11px;
+        color: #3096F7;
+        font-size: 18px;
+        font-family: "SourceSansProSemibold";
+    }
+    .p2-bagde{ 
+        margin-top: 3px; 
+        color: #191A45; 
+        font-size: 14px;
+        font-family: "SourceSansProSemibold";
+    }
+    .p1-bagde1{
+        color: #ACACBC;
+        font-size: 18px;
+        font-family: "SourceSansProSemibold";
+    }
+    .p2-bagde1{ 
+        margin-top: 3px; 
+        color: #ACACBC;
+        font-size: 14px;
+        font-family: "SourceSansProSemibold";
+    }
+    .item-md.item-block .item-inner {
+        border-bottom: none !important;
+    }
+
+    .button-md {
+        box-shadow:none;
+        -webkit-box-shadow:none;
+      }
+
+      .radio-md .radio-icon{
+        background: #fff;
+        width: 30px;
+        height: 30px;
+        border-width: 1px;
+        border-style: solid;  
+        border-color: #D7D7D7;
+    }
+
+    .item-input .label-md, .item-select .label-md, .item-datetime .label-md{
+        color: #46476A;
+         margin-left: 20px;
+         font-family: 'SourceSansProRegular';
+         font-size: 14px;
+    }
+    .select-md .select-placeholder {
+        color: #46476A;
+        font-family: 'SourceSansProRegular';
+        font-size: 14px;
+    }
+    .radio-md .radio-inner{
+        width: 24px;
+        height: 24px;
+    }
+    .item-md.item-block .item-inner {
+        border-bottom: none !important;
+    }
+    .p-col3{
+        margin-top: 6px; 
+        color: #46476A ;
+        font-family: 'SourceSansProRegular';
+        font-size: 14px;
+    }
+    
+}

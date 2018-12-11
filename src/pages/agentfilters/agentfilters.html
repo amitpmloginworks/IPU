@@ -1,0 +1,124 @@
+<!--
+  Generated template for the AgentfiltersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-header no-shadow no-border> 
+    <ion-navbar hideBackButton="true">     
+            <ion-buttons left menuToggle="left" style="    display: block !important;"> 
+                    <button ion-button icon-only>
+                                <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                    </button>
+                  </ion-buttons>
+
+      <ion-title text-center>Agent Filters</ion-title> 
+
+      <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+            </button>
+    </ion-buttons>
+
+    <ion-buttons end (click)="ProfileBtn()">
+            <button ion-button icon-only>
+                        <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+            </button>
+    </ion-buttons>
+
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>      
+   
+          <ion-grid no-padding no-margin class="gridcl"> 
+
+          <ion-row class="mtop-rows"> <ion-col col-12 class="col-12-tittle">SEX</ion-col> </ion-row>
+         
+          <ion-item > 
+                <ion-label floating *ngIf="onSex" [ngStyle]="(onSex)?{ 'display': 'none'  }:{  }">Please select</ion-label> 
+                <ion-label *ngIf="!onSex" >Please select</ion-label>
+              <ion-select [(ngModel)]="Sex" [ngStyle]="(onSex)?{ 'margin-top': '6px','margin-left': '10px'  }:{  }" #C (ionChange)="onChangeSex()">   
+                  <ion-option value="Male">Male</ion-option>
+                  <ion-option value="Female">Female</ion-option> 
+              </ion-select> 
+             </ion-item>
+
+          <ion-row class="mtop-rows"> <ion-col col-12 class="col-12-tittle">AGE</ion-col> </ion-row>
+            <ion-item > 
+                    <ion-label floating *ngIf="onage" [ngStyle]="(onage)?{ 'display': 'none'  }:{  }">Please select</ion-label> 
+                    <ion-label *ngIf="!onage" >Please select</ion-label>
+                <ion-select [(ngModel)]="age" [ngStyle]="(onage)?{ 'margin-top': '6px','margin-left': '10px'  }:{  }" #C (ionChange)="onChangeage()"> 
+                    <ion-option value="15-25">16 to 25</ion-option>
+                    <ion-option value="25-35">26 to 35</ion-option>
+                    
+                    <ion-option value="35-45">36 to 45</ion-option>
+                    <ion-option value="45-55">46 to 55</ion-option> 
+
+                    <ion-option value="55-65">56 to 65</ion-option>
+                    <ion-option value="65-200">66 + </ion-option> 
+
+                </ion-select> 
+               </ion-item>
+
+
+          <ion-row class="mtop-rows"> <ion-col col-12 class="col-12-tittle">FAMILY STATUS </ion-col></ion-row>
+          <ion-item > 
+                <ion-label floating *ngIf="onFamilyStatus" [ngStyle]="(onFamilyStatus)?{ 'display': 'none'  }:{  }">Please select</ion-label> 
+                <ion-label *ngIf="!onFamilyStatus" >Please select</ion-label>
+            <ion-select [(ngModel)]="FamilyStatus"  [ngStyle]="(onFamilyStatus)?{ 'margin-top': '6px','margin-left': '10px'  }:{  }" #C (ionChange)="onChangeFamilyStatus()"> 
+                <ion-option value="Single">Single</ion-option>
+                <ion-option value="Married">Married</ion-option>
+                <ion-option value="Divorced">Divorced</ion-option>
+                <ion-option value="Widow">Widow</ion-option> 
+
+            </ion-select> 
+           </ion-item>
+
+           <ion-row class="mtop-rows"> <ion-col col-12 class="col-12-tittle">BADGES </ion-col></ion-row>
+           <ion-item > 
+                <ion-label floating *ngIf="onbadge" [ngStyle]="(onbadge)?{ 'display': 'none'  }:{  }">Please select</ion-label> 
+                <ion-label *ngIf="!onbadge" >Please select</ion-label>
+             <ion-select [(ngModel)]="badge"  [ngStyle]="(onbadge)?{ 'margin-top': '6px','margin-left': '10px'  }:{  }" #C (ionChange)="onChangebadge()"> 
+                 <ion-option value="1">Bronze Member +</ion-option>
+                 <ion-option value="2">Silver Member + </ion-option> 
+                 <ion-option value="3">Gold Member+</ion-option>
+                 <ion-option value="4">Platinum Member +</ion-option> 
+             </ion-select> 
+            </ion-item>
+
+            <ion-row class="mtop-rows"> <ion-col col-12 class="col-12-tittle">NUMBER OF REVIEWS </ion-col></ion-row>
+            <ion-item > 
+                    <ion-label floating *ngIf="onReviews" [ngStyle]="(onReviews)?{ 'display': 'none'  }:{  }">Please select</ion-label> 
+                    <ion-label *ngIf="!onReviews" >Please select</ion-label>
+              <ion-select [(ngModel)]="Reviews"  [ngStyle]="(onReviews)?{ 'margin-top': '6px','margin-left': '10px'  }:{  }" #C (ionChange)="onChangeReviews()"> 
+                  <ion-option value="200">200+</ion-option>
+                  <ion-option value="100">100+</ion-option> 
+                  <ion-option value="50">50+</ion-option>
+                  <ion-option value="20">20+</ion-option> 
+                  <ion-option value="10">10+</ion-option>
+              </ion-select> 
+             </ion-item>
+
+             <ion-row class="mtop-rows"> <ion-col col-12 class="col-12-tittle">NUMBER OF REFERRAL DEAL </ion-col></ion-row>
+             <ion-item > 
+                    <ion-label floating *ngIf="onDeal" [ngStyle]="(onDeal)?{ 'display': 'none'  }:{  }">Please select</ion-label> 
+                    <ion-label *ngIf="!onDeal" >Please select</ion-label>
+               <ion-select [(ngModel)]="ReferralDeal" [ngStyle]="(onDeal)?{ 'margin-top': '6px','margin-left': '10px'  }:{  }" #C (ionChange)="onChangeDeal()"> 
+                  <ion-option value="200">200+</ion-option>
+                  <ion-option value="100">100+</ion-option> 
+                  <ion-option value="50">50+</ion-option>
+                  <ion-option value="20">20+</ion-option> 
+                  <ion-option value="10">10+</ion-option> 
+               </ion-select> 
+              </ion-item> 
+   
+      <button ion-button (click)="SendBtn()"> SUBMIT </button> 
+
+      </ion-grid>
+</ion-content>
+
+

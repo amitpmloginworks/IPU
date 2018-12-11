@@ -1,0 +1,266 @@
+<!--
+  Generated template for the AddfilterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->  
+
+<ion-header no-shadow no-border>
+    <ion-navbar hideBackButton="true">  
+            <ion-buttons left menuToggle="left" style="display: block !important;">
+                    <button ion-button icon-only>
+                                <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                    </button>
+                  </ion-buttons>
+      <ion-title text-center>Provider Search</ion-title>   
+      <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+            </button>
+    </ion-buttons>
+    <ion-buttons end (click)="ProfileBtn()">
+            <button ion-button icon-only>
+                        <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+            </button>
+    </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding> 
+        <ion-grid no-padding no-margin >   
+                <ion-row class="gridcl" style="    margin-top: 8px;">
+                    <ion-col col-6 no-padding no-margin class="contenttittle" (click)="LessBtn()">Less Filters</ion-col>
+                    <ion-col col-6 no-padding no-margin text-right>  
+                        <p class="p-footer" no-padding no-margin>Sort by: <a class="a-tittle" (click)="SortByData()" > {{ SortTxt  }} </a></p>   
+                    </ion-col>
+                </ion-row>
+                <ion-row >  <ion-col col-12 text-left class="contenttittle1">DISTANCE FROM LOCATION</ion-col>  </ion-row>
+  <div class="padleftright">
+      <ion-item >     
+        <ion-label floating *ngIf="onDistanceLoc" [ngStyle]="(onDistanceLoc)?{ 'display': 'none'  }:{  }">Please select</ion-label> 
+        <ion-label *ngIf="!onDistanceLoc" >Please select</ion-label>
+   
+          <ion-select [(ngModel)]="DistanceLoc" [ngStyle]="(onDistanceLoc)?{ 'margin-top': '6px','margin-left': '10px'  }:{  }" #C (ionChange)="onChangeDist(C.value)">
+            <ion-option value="10">Under 10KM</ion-option>
+            <ion-option value="20">20 KM </ion-option>
+            <ion-option value="50">50 KM</ion-option>
+            <ion-option value="100">100 KM</ion-option>
+            <ion-option value="200">200 KM</ion-option>  
+          </ion-select> 
+         </ion-item>  
+
+         <ion-row class="mtop-rows" no-margin no-padding> <ion-col col-12 class="col-12-tittle" no-margin no-padding>RATING </ion-col></ion-row>
+         <ion-item > 
+           <ion-label floating *ngIf="onRating" [ngStyle]="(onRating)?{ 'display': 'none'  }:{  }">Please select</ion-label> 
+           <ion-label *ngIf="!onRating" >Please select</ion-label>
+           <ion-select [(ngModel)]="Rating" [ngStyle]="(onRating)?{ 'margin-top': '6px','margin-left': '10px'  }:{  }" #C (ionChange)="onChangeRating(C.value)"> 
+            <ion-option value="4.5">4.5*+ </ion-option>
+             <ion-option value="4">4 *+</ion-option>
+             <ion-option value="3.5">3.5*+</ion-option>
+             <ion-option value="3">3*+</ion-option>  
+           </ion-select> 
+          </ion-item>   
+
+          <ion-row class="mtop-rows" no-margin no-padding> <ion-col col-12 class="col-12-tittle" no-margin no-padding>REVIEW </ion-col></ion-row>
+         <ion-item > 
+          <ion-label floating *ngIf="onReviews" [ngStyle]="(onReviews)?{ 'display': 'none'  }:{  }">Please select</ion-label> 
+          <ion-label *ngIf="!onReviews" >Please select</ion-label>
+           <ion-select [(ngModel)]="Reviews" #ReviewId [ngStyle]="(onReviews)?{ 'margin-top': '6px','margin-left': '10px'  }:{  }" (ionChange)="onChangeReview(ReviewId.value)"> 
+            <ion-option value="200">200+ </ion-option>
+            <ion-option value="100">100+</ion-option>
+            <ion-option value="50">50+</ion-option>
+            <ion-option value="20">20+</ion-option>
+            <ion-option value="10">10+</ion-option> 
+           </ion-select> 
+          </ion-item>
+  
+          <ion-row class="mtop-rows" no-margin no-padding> <ion-col col-12 class="col-12-tittle" no-margin no-padding>BADGES </ion-col></ion-row>
+         <ion-item > 
+          <ion-label floating *ngIf="onBages" [ngStyle]="(onBages)?{ 'display': 'none'  }:{  }">Please select</ion-label> 
+          <ion-label *ngIf="!onBages" >Please select</ion-label>
+           <ion-select mode="ios" [(ngModel)]="Bages" [ngStyle]="(onBages)?{ 'margin-top': '6px','margin-left': '10px'  }:{  }" #BagesId (ionChange)="onChangeBages(BagesId.value)"> 
+             <ion-option value="1">Bronze Member +</ion-option>
+             <ion-option value="2">Silver Member +</ion-option>
+             <ion-option value="3">Gold Member+</ion-option>
+             <ion-option value="4">Platinum Member +</ion-option>
+           </ion-select> 
+          </ion-item>
+  
+  </div>
+            
+  <div class="fulllines"></div>
+  
+  <ion-row class="ionrows1 padleftright" *ngIf="!FilterDisplay"> <ion-col col-12 text-left class="contenttittle2">Under 10KM</ion-col> </ion-row>
+  
+  <div class="padleftright"> 
+      <ion-row style="background: #fff; border: 1px solid #d7d7d7;margin-top: 6.5px;border-radius: 6px;margin-bottom: 10.85px;" *ngFor="let result of FilterListArr;let i =index">
+          <ion-col col-3 style=" max-width: 19%;">
+           <img class="img-style" src="{{ ImageUrl+result.image }}">
+
+           <div class="plus-style2" >  
+              <img  src="assets/imgs/inviteagent/Group694.png" *ngIf="result.badge==1">
+              <img  src="assets/imgs/profile/Group694.png" *ngIf="result.badge==2">
+              <img  src="assets/imgs/profile/Group695.png" *ngIf="result.badge==3">
+              <img  src="assets/imgs/profile/Group696.png" *ngIf="result.badge==4">  
+                </div>
+          </ion-col>  
+          <ion-col col-8>  
+           <p no-margin no-padding class="p-2">{{ result.name+" "+result.lastname  }}</p>
+           <p no-margin no-padding class="p-1">{{ result.providing.services }}</p> 
+          </ion-col>
+          <ion-col col-1 text-right (click)="OpenCloseArrow( result.email,result.phone,result.website,result.address,i,result.providing.profession,result._id,result.image)"> 
+                        <img class="img-arrowdown" src="assets/icon/arrow-down.png" id="arrowdown_{{i}}">   
+                        <img class="img-arrowdown" src="assets/icon/arrow-up.png" style="display: none;"  id="arrowup_{{i}}">
+          </ion-col>
+ 
+        <div id="x_{{i}}" style="display: none;" > 
+          <ion-col col-12  >
+             <ion-row style="padding-left: 10px;">
+                  <ion-col col-12> 
+                                  <div style="width:100%;">
+                          <div class="subrows-tittle1">Email:</div> 
+                          <div class="col12-img1">{{ ProviderEmail }}</div>  
+                          </div>
+                   </ion-col>
+                  <ion-col col-12> 
+                                  <div style="width:100%;">
+                             <div class="subrows-tittle1">Phone:</div>
+                             <div class="col12-img1">    {{ ProviderPhone }} </div>  
+                             </div> 
+                  </ion-col>
+
+                  <ion-col col-12> 
+                      <div style="width:100%;">
+                 <div class="subrows-tittle1">Rating:</div>
+                 <div class="col12-img1">  {{ result.stats.avg_score.toFixed(1) }}* ( {{ result.stats.reviews  }} reviews ) </div>  
+                 </div> 
+      </ion-col>
+
+      <ion-col col-12> 
+                      <div style="width:100%;">
+                 <div class="subrows-tittle1">Website:</div>
+                 <div class="col12-img1">    {{ result.website }} </div>  
+                 </div> 
+      </ion-col>
+
+      <ion-col col-12> 
+                      <div style="width:100%;">
+                 <div class="subrows-tittle1">Address:</div>
+                 <div class="col12-img1">    {{ result.address }} </div>   
+                 </div> 
+      </ion-col> 
+
+                     <ion-col col-4> 
+                       <button ion-button icon-start clear small no-padding no-margin  (click)="PublishBtn()">  <div>PUBLISH</div> </button>
+                     </ion-col>
+                     <ion-col col-4 style="padding-left: 25px;">
+                          <button ion-button icon-start clear small no-padding no-margin> <div>CHAT</div> </button>
+                     </ion-col>
+                     <ion-col col-4 text-center>
+                  <button ion-button icon-start clear small no-padding no-margin (click)="SeeDetails(i)"> <div>SEE DETAILS</div> </button>
+                     </ion-col>
+             </ion-row>     
+          
+          </ion-col>
+          </div>
+
+
+
+   </ion-row> 
+
+
+  
+<div *ngIf="!FilterDisplay">
+
+
+      <ion-row style="background: #fff; border: 1px solid #d7d7d7;margin-top: 6.5px;border-radius: 6px;margin-bottom: 10.85px;"  *ngFor="let result of FilterListArr1;let j =index">  
+    <ion-col col-3 style=" max-width: 19%;" > 
+        <img class="img-style" src="{{ ImageUrl+result.image }}"> 
+
+        <div class="plus-style2" >  
+           <img  src="assets/imgs/inviteagent/Group694.png" *ngIf="result.badge==1">
+           <img  src="assets/imgs/profile/Group694.png" *ngIf="result.badge==2">
+           <img  src="assets/imgs/profile/Group695.png" *ngIf="result.badge==3">
+           <img  src="assets/imgs/profile/Group696.png" *ngIf="result.badge==4">  
+             </div> 
+       </ion-col>
+       <ion-col col-8> 
+        <p no-margin no-padding class="p-2">{{ result.name+" "+result.lastname }}</p> 
+        <p no-margin no-padding class="p-1">{{ result.providing.services }}</p>   
+       </ion-col>
+       <ion-col col-1 text-right (click)="OpenCloseArrow1( result.email,result.phone,result.website,result.address,j,result.providing.profession,result._id,result.image)">  
+         <img class="img-arrowdown" src="assets/icon/arrow-down.png" id="arrowdowns_{{j}}">   
+         <img class="img-arrowdown" src="assets/icon/arrow-up.png" style="display: none;"  id="arrowups_{{j}}">    
+
+       </ion-col>
+
+ <div id="y_{{j}}" style="display: none;" >    
+   <ion-col col-12  >
+      <ion-row style="padding-left: 10px;">
+           <ion-col col-12> 
+                           <div style="width:100%;">
+                   <div class="subrows-tittle1">Email:</div> 
+                   <div class="col12-img1">{{ ProviderEmail1 }}</div>  
+                   </div>
+            </ion-col>
+           <ion-col col-12> 
+                           <div style="width:100%;">
+                      <div class="subrows-tittle1">Phone:</div>
+                      <div class="col12-img1">    {{ ProviderPhone1 }} </div>  
+                      </div> 
+           </ion-col>
+
+           <ion-col col-12> 
+               <div style="width:100%;">
+          <div class="subrows-tittle1">Rating:</div>
+          <div class="col12-img1">  {{ result.stats.avg_score.toFixed(1) }}* ( {{ result.stats.reviews  }} reviews ) </div>  
+          </div> 
+</ion-col>
+
+<ion-col col-12> 
+               <div style="width:100%;">
+          <div class="subrows-tittle1">Website:</div>
+          <div class="col12-img1">    {{ result.website }} </div>  
+          </div> 
+</ion-col>
+
+<ion-col col-12> 
+               <div style="width:100%;">
+          <div class="subrows-tittle1">Address:</div>
+          <div class="col12-img1">    {{ result.address }} </div>   
+          </div> 
+</ion-col>
+
+              <ion-col col-4> 
+                <button ion-button icon-start clear small no-padding no-margin  (click)="PublishBtn1()">  <div>PUBLISH</div> </button>
+              </ion-col>
+              <ion-col col-4 style="padding-left: 25px;">
+                   <button ion-button icon-start clear small no-padding no-margin> <div>CHAT</div> </button>
+              </ion-col>
+              <ion-col col-4 text-center>   
+           <button ion-button icon-start clear small no-padding no-margin (click)="SeeDetails1(j)"> <div>SEE DETAILS</div> </button>
+              </ion-col>
+      </ion-row>     
+   
+   </ion-col>
+   </div>
+
+
+       </ion-row> 
+    
+
+
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event,FilterDisplay)"> 
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  </div>
+        </ion-grid>
+    
+  </ion-content> 
+  

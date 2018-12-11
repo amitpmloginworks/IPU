@@ -1,0 +1,141 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-shadow no-border>
+
+    <ion-navbar hideBackButton="true"> <!--  hideBackButton="true" -->
+      <ion-title text-center>
+        <div *ngIf="types=='register'">Register</div>
+        <div *ngIf="types=='registerProvider'">Register as a provider</div>
+        <div *ngIf="types=='registerPublishAgent'">Register as a publish agent</div>
+      </ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content > 
+
+  <ion-grid class="gridcl">
+
+
+   <ion-row *ngIf="types=='register'">
+   <ion-col col-3 style=" width: 16%;  max-width: 18%;">
+    <img class="img-style" src="assets/icon/profile-pic.jpeg">
+   </ion-col>
+   <ion-col col-9>  
+    <p no-margin no-padding class="p-1">You've been invited by</p>
+    <p no-margin no-padding class="p-2">Name Surname</p> 
+   </ion-col>
+    </ion-row> 
+
+    <ion-row *ngIf="types=='registerPublishAgent'">
+        <ion-col col-3 style=" width: 16%;  max-width: 18%;">
+         <img class="img-style" src="assets/icon/profile-pic.jpeg">
+        </ion-col>
+        <ion-col col-9>  
+         <p no-margin no-padding class="p-1">You've been invited by</p>
+         <p no-margin no-padding class="p-2">Name Surname</p> 
+        </ion-col>
+   </ion-row> 
+
+    <ion-row *ngIf="types=='registerProvider'" no-margin no-padding>
+        <ion-col col-12 no-margin no-padding>   
+         <p no-margin no-padding class="p-1" style="font-size: 22px;margin-bottom: 8px;">Account Details</p>
+        </ion-col>
+    </ion-row> 
+
+    <ion-row no-margin no-padding style="margin-bottom: 4px;margin-top: 5px;"><ion-col col-12 class="col-12-tittle1" no-margin no-padding>USERNAME</ion-col></ion-row>
+  
+    <ion-item> <ion-input type="text" value=""  [(ngModel)]="Username"></ion-input>    </ion-item>
+
+
+
+    <div class="tittlediv1">  
+        <div class="tittlediv2">
+            <div class="tittlediv3"> FIRST NAME </div>
+        </div>
+        
+    <div class="tittlediv4"></div>
+      <div class="tittlediv5">
+          <div class="tittlediv6"> LAST NAME </div>
+      </div>
+    </div>
+
+
+    <div class="contentdiv-out">
+        <div class="contentdivlr">
+            <ion-item *ngIf="SocialLog==1"> <ion-input  type="text" [(ngModel)]="FirstName" readonly ></ion-input> </ion-item>
+            <ion-item *ngIf="SocialLog==0"> <ion-input  type="text" [(ngModel)]="FirstName"  ></ion-input> </ion-item>
+        </div>
+         
+        <div class="contentdiv-center"></div>
+      <div class="contentdivlr">
+          <ion-item *ngIf="SocialLog==1">  <ion-input  type="text"  [(ngModel)]="LastName" readonly ></ion-input>    </ion-item>
+          <ion-item *ngIf="SocialLog==0">  <ion-input  type="text"  [(ngModel)]="LastName"  ></ion-input>    </ion-item>
+      </div>
+
+    </div>  
+
+    <ion-row no-margin no-padding style="margin-bottom: 4px;"><ion-col col-12 class="col-12-tittle" no-margin no-padding>EMAIL</ion-col></ion-row>
+  
+    <ion-item *ngIf="SocialLog==1"> <ion-input type="email" value="" [(ngModel)]="email" readonly></ion-input>    </ion-item>
+    <ion-item *ngIf="SocialLog==0"> <ion-input type="email" value="" [(ngModel)]="email"></ion-input>    </ion-item>
+
+
+    <ion-row no-margin no-padding style="margin-bottom: 4px;"><ion-col col-12 class="col-12-tittle" no-margin no-padding>PASSWORD</ion-col></ion-row>
+    <ion-item > <ion-input type="password" value="" [(ngModel)]="Password"></ion-input> </ion-item>
+
+
+    <ion-row no-margin no-padding style="margin-bottom: 4px;"><ion-col col-12 class="col-12-tittle" no-margin no-padding>CONFIRM PASSWORD</ion-col></ion-row>
+    <ion-item > <ion-input type="password" value="" [(ngModel)]="ConPassword"></ion-input>   </ion-item>
+
+
+<div *ngIf="types =='register'">    
+    <ion-row no-margin no-padding style="margin-bottom: 4px;"><ion-col col-12 class="col-12-tittle" no-margin no-padding>PHONE NUMBER</ion-col></ion-row>
+    <ion-item> <ion-input type="tel" [(ngModel)]="phoneNo" [textMask]="{mask: masks.phoneNo}"></ion-input> </ion-item>
+</div>
+
+
+
+
+        <div style="display:none;"> 
+                <ion-row no-margin no-padding style="margin-bottom: 4px;" *ngIf="types=='registerProvider'"><ion-col col-12 class="col-12-tittle" no-margin no-padding>No Profession selected</ion-col></ion-row>
+   <rl-tag-input [(ngModel)]="Profession"  [addOnBlur]="false" [autocomplete]="true" [autocompleteItems]="ProfessionArr" *ngIf="types=='registerProvider'"> </rl-tag-input>      
+    
+   <ion-row no-margin no-padding style="margin-bottom: 4px;"><ion-col col-12 class="col-12-tittle" no-margin no-padding *ngIf="types=='registerProvider'">No Category selected</ion-col></ion-row>
+   <rl-tag-input [(ngModel)]="Category"  [addOnBlur]="false" [autocomplete]="true" [autocompleteItems]="CategoryArr" *ngIf="types=='registerProvider'"> </rl-tag-input>   
+        </div> 
+
+
+
+   <ion-row no-margin no-padding style="margin-bottom: 4px;display: none;"><ion-col col-12 class="col-12-tittle" no-margin no-padding >Website</ion-col></ion-row>
+   <ion-item style="display: none;"> <ion-input type="text" value="" [(ngModel)]="Website"></ion-input>   </ion-item>
+
+   <ion-row no-margin no-padding style="margin-bottom: 4px;display: none;"><ion-col col-12 class="col-12-tittle" no-margin no-padding>Address</ion-col></ion-row> 
+   <ion-item style="display: none;" > <ion-input type="text" id="txtHome" value="" [(ngModel)]="Address"></ion-input>   </ion-item>
+
+<agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom" style="display: none;">
+<agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+</agm-map>
+
+ 
+       <button ion-button full class="btn-mtop" (click)="GotoNext()">      
+      <ion-icon ios="ios-arrow-round-forward" md="md-arrow-round-forward" mode="ios"></ion-icon>
+    </button> 
+
+
+  </ion-grid>
+  
+ 
+  <div class="div-footer">
+    <ion-row><ion-col col-12 text-center>  
+      <p style="margin-top: 14px; margin-bottom: 16px;">Already have an account? <a class="a-tittle" (click)="GotoPrevious()">Login!</a></p>
+    </ion-col></ion-row>
+  </div>
+  
+  
+  </ion-content>

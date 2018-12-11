@@ -1,0 +1,88 @@
+<!--
+  Generated template for the CampaignaddPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-header no-shadow no-border>  
+    <ion-navbar hideBackButton="true">    
+            <ion-buttons left menuToggle="left" style="display: block !important;" >
+            <button ion-button icon-only>
+                        <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+            </button>
+          </ion-buttons>
+        <ion-title text-center>New Campaign</ion-title>
+        <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+            </button>
+    </ion-buttons>
+  
+    <ion-buttons end (click)="ProfileBtn()"> 
+            <button ion-button icon-only>
+                        <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+            </button>
+    </ion-buttons>
+      </ion-navbar>    
+  </ion-header>
+  
+  <ion-content padding>
+      <ion-grid no-padding no-margin class="gridcl">  
+          <p class="text-headline">
+              New campaign
+          </p>
+    <p class="text-style">
+      Create a new campaign that contain an offer for free service.
+  </p>
+
+  <p class="text-desc">
+    CAMPAIGN TITLE
+</p> 
+ 
+<div class="div-text">
+  <ion-item no-lines>
+<ion-input type="text" maxLength="500"  [(ngModel)]="title"></ion-input>
+</ion-item>
+</div> 
+
+  <p class="text-desc">
+      CAMPAIGN DESCRIPTION
+  </p> 
+  
+  
+  <ion-textarea  rows="5" maxLength="500"  [(ngModel)]="AskReferral"></ion-textarea>
+
+
+  <div style="width:100%">
+    <div class="div-inner-left">
+  <p  class="text-desc">START DATE</p>
+  <div class="div-text">
+  <ion-item no-lines>
+  <ion-datetime [min]="minyear"  max="2050"   displayFormat="MM/DD/YYYY" [(ngModel)]="startDate"></ion-datetime>
+  </ion-item>
+  </div>
+    </div>
+    <div class="div-inner-right">
+        <p  class="text-desc">END DATE</p>
+        <div class="div-text">
+            <ion-item no-lines>
+            <ion-datetime displayFormat="MM/DD/YYYY" [min]="minyear"  max="2050"  [(ngModel)]="endDate"></ion-datetime>
+          </ion-item>
+            </div>
+          </div>
+  <div>
+  </div>
+  </div>
+  <div style="width:100%;">
+    <p  class="text-desc">CAMPAIGN IMAGE</p>  
+    <div class="div-text" style="text-align: left" (click)="uploadpicture()">
+      <p class="text-style" style="padding-left:15px">{{ LocalimgPath }}</p>
+    </div>
+  </div>   
+        <button ion-button full class="btn-create" (click)="SaveBtn()" >Create Campaign </button> 
+  </ion-grid>
+  </ion-content>
+  

@@ -1,0 +1,54 @@
+<!--
+  Generated template for the QuicksearchmodalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+ 
+<ion-content padding class="modal-page" text-center ion-fixed scroll="false"  >
+    <div class="outer-div"> 
+      <div style="text-align: right;"></div>
+    <div class="inner-div">
+
+            <ion-row style="margin-top: 6.5px;border-radius: 6px;">
+                <ion-col col-3 style=" max-width: 19%;">
+                 <img class="img-style" src="assets/imgs/inviteagent/image.png">
+                </ion-col>
+                <ion-col col-9 text-left> 
+                 <p no-margin no-padding class="p-2">{{ UserName }}</p> 
+                 <p no-margin no-padding class="p-1">{{ profession }}</p> 
+                </ion-col>
+                <ion-col col-12 > 
+                    <ion-row>
+                         <ion-col col-12> 
+                                         <div style="width:100%;">
+                                 <div class="subrows-tittle1">Email:</div> 
+                                 <div class="col12-img1">{{ email }}</div>  
+                                 </div>
+                          </ion-col>
+                         <ion-col col-12> 
+                                         <div style="width:100%;">
+                                    <div class="subrows-tittle1" style="margin-left: 3px;">Phone:</div>
+                                    <div class="col12-img1">   {{ phone }} </div>  
+                                    </div> 
+                         </ion-col>
+                            <ion-col col-6 text-left> 
+                              <button ion-button icon-start (click)="PublishBtn()" clear small no-padding no-margin style="margin-left: 14px;"> <div>PUBLISH</div> </button>
+                            </ion-col>
+                            
+                            <ion-col col-6 text-right>
+                         <button ion-button icon-start clear small no-padding no-margin style="margin-right: 14px;"> <div>SEE DETAILS</div> </button>
+                            </ion-col>
+                    </ion-row>     
+                 </ion-col>
+         </ion-row> 
+
+         <div class="fulllines"></div> 
+         <ion-row style="margin-bottom:12px;">
+           <ion-col col-12 text-left>   
+            <p class="p-footer" no-padding no-margin>No results? <a class="a-tittle" (click)="ProviderBtn()">Invite this provider!</a>
+          </p>
+          </ion-col>
+        </ion-row>
+    </div> 
+  </div>

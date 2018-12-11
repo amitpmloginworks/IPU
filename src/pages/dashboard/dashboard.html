@@ -1,0 +1,151 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+ 
+<ion-header no-shadow no-border>
+  <ion-navbar hideBackButton="true">     
+      <ion-buttons left menuToggle="left" style="    display: block !important;">
+                    <button ion-button icon-only>
+                                <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                    </button>
+                  </ion-buttons>
+      <ion-title text-center>Dashboard</ion-title> 
+      <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+            </button>
+    </ion-buttons>
+    <ion-buttons end (click)="ProfileBtn()"> 
+            <button ion-button icon-only>
+                        <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+            </button>
+    </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+
+
+<ion-content >
+    <ion-grid no-padding no-margin>
+
+
+   <div *ngIf="ProviderUser">  
+  <ion-row style="margin-top: 10px;">
+     <ion-col>
+       <ion-card class="pad1">
+         <p class="title"> Balance:</p> 
+        <p>{{ ProviderBalance }}$</p>  
+       </ion-card>
+     </ion-col>
+     <ion-col>
+       <ion-card class="pad1">
+         <p class="title">Referral Views:</p> 
+          <p>{{ ProviderReferralView }}</p>
+       </ion-card>
+     </ion-col>
+  </ion-row>
+  
+  <ion-row>
+      <ion-col>
+        <ion-card class="pad2">
+           <p class="title"> Earnings:</p> 
+            <p>{{ ProviderEarning }}$ </p>
+           <p style="font-size: 1rem"> (last week)</p>
+       </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="pad1">
+           <p class="title"> Registered Refferals:</p>
+             <p>{{ ProviderRegReferral }}</p>
+        </ion-card>
+      </ion-col>
+  </ion-row>
+  
+  <ion-row>
+          <ion-col>
+            <ion-card class="pad2">
+                <p class="title">Profile views:</p> 
+                <p>{{ ProviderProfileViews }}</p> 
+               <p style="font-size: 1rem"> (last week)</p>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card class="pad1">
+               <p class="title"> Deals:</p> 
+                <p>{{ ProviderCloseDeal }}</p>  
+            </ion-card>
+          </ion-col>
+   </ion-row>
+  </div> 
+
+  
+  <div *ngIf="!ProviderUser">  
+      <ion-row style="margin-top: 10px;">
+         <ion-col>
+           <ion-card class="pad1">
+             <p class="title"> Balance:</p> 
+            <p>{{ UserBalance }}$</p>  
+           </ion-card>
+         </ion-col>
+         <ion-col>
+           <ion-card class="pad1">
+             <p class="title">Referral Visits:</p> 
+              <p>{{ UserReferralView }}</p>  
+           </ion-card>
+         </ion-col>
+      </ion-row>
+      
+      <ion-row>
+          <ion-col>
+            <ion-card class="pad2">
+               <p class="title"> Users Invited:</p> 
+                <p>{{ UserInvite }} </p>
+              
+           </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card class="pad1">
+               <p class="title"> User Registered:</p>
+                 <p>{{ UserReg }}</p>
+            </ion-card>
+          </ion-col>
+      </ion-row>
+      
+      <ion-row>
+              <ion-col>
+                <ion-card class="pad2">
+                    <p class="title">Connections:</p> 
+                    <p>{{ UserConnection }}</p> 
+                  
+                </ion-card>
+              </ion-col>
+              <ion-col>
+                <ion-card class="pad1">
+                   <p class="title"> Deals by Referrals:</p> 
+                    <p>{{ UserDeal }}</p>  
+                </ion-card>
+              </ion-col>
+       </ion-row>
+      </div> 
+
+
+
+  </ion-grid>
+  <ion-card class="card-graph">
+      <ion-card-header>
+        <p class="heading-title">References:</p>
+  
+          <p class="graph-details" >Show: <u style="color:#3096F7">Months, Prices</u></p>
+  
+  
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas style="display: block;height: 165px;width: 310px !important;"></canvas>
+      </ion-card-content>
+    </ion-card>
+  
+  </ion-content>
+  

@@ -1,0 +1,64 @@
+<!--
+  Generated template for the RegprovidersrcPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-header no-shadow no-border>
+    <ion-navbar >    
+      <ion-title text-center>Register as a provider</ion-title> 
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding > 
+        <ion-grid no-padding no-margin class="gridcl">
+
+            <ion-row no-margin no-padding >
+              <ion-col col-12 no-margin no-padding>
+                <p class="contenttittle" no-margin no-padding >Select Services</p>
+                <p class="p-f16" no-margin no-padding style="margin-top: 10px;">You can select from the list below what</p>
+                <p class="p-f16" no-margin no-padding style="margin-top: 5px;">services</p>
+                <p class="p-f16" no-margin no-padding style="margin-top: 5px;">your business offers.</p>
+              </ion-col>
+            </ion-row>
+
+                <div style="margin-top: 4px;"> 
+                <ion-searchbar no-padding no-margin placeholder="Search for service" class="custom-search" [(ngModel)]="myInput" [showCancelButton]="true"  (ionInput)="getItems($event)"  no-shadow no-border>
+                </ion-searchbar>
+                </div>
+  <div style="background: #fff; border: 1px solid #d7d7d7;border-radius: 6px;margin-top: 25px;" >
+  <div *ngIf="surveyForm"> 
+      <form [formGroup]="surveyForm">
+          <div formArrayName="answers">
+  <div  *ngFor="let question of answers; let i = index" [formGroupName]="i">
+            <ng-container>  
+              <div formArrayName="answer_by_user">
+                <div *ngFor="let choice of question.answers; let j = index" >
+                  <ion-row no-padding no-margin *ngIf="choice.id !=0">
+                          <ion-col col-2 style="max-width: 11%;" no-padding no-margin> 
+                      <ion-item no-padding no-margin> <ion-checkbox no-padding no-margin (ionChange)="onChange(choice.id, $event.checked, i)" value="choice.id"></ion-checkbox> </ion-item>
+                          </ion-col>
+                          <ion-col col-10 no-padding no-margin> <p no-margin no-padding class="p-1">{{ choice.id }}</p> </ion-col>
+                     
+                  </ion-row> 
+                </div>
+              </div>
+            </ng-container>
+  </div>  
+  </div>  
+  </form>
+  </div>  
+  </div>
+
+  <ion-fab right bottom (click)="SearchBtn()" style="right: 32px;position: fixed;"  >
+      <button ion-fab color="primary">
+              <ion-icon name="ios-arrow-round-forward" mode="ios"></ion-icon>
+      </button>
+    </ion-fab>
+
+  </ion-grid>                   
+  </ion-content>
+  
+  

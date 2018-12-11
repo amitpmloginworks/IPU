@@ -1,0 +1,73 @@
+<!--
+  Generated template for the NotificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-shadow no-border> 
+    <ion-navbar >  
+        
+            <ion-buttons left menuToggle>
+                    <button ion-button icon-only>
+                                <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                    </button>
+                  </ion-buttons>
+
+      <ion-title text-center>  {{ HeaderTitle }}</ion-title>  
+
+      <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat.png">  
+            </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover()">
+                        <img class="img-profile" src="assets/imgs/menuicons/notify.png">
+            </button>
+    </ion-buttons>
+
+    </ion-navbar>
+  </ion-header>
+
+<ion-content > 
+<div class="outer-div">
+    <div class="inner-div">
+ 
+    <ion-row style="background: #f1f8fe;">
+        <ion-col col-3 style=" max-width: 20%;">
+         <img class="img-style" src="{{ ImageUrl1+imagePath1 }}">   
+        </ion-col>
+        <ion-col col-9> 
+         <p no-margin no-padding class="p-2">{{ fullName }}</p>
+         <p no-margin no-padding class="p-1">Balance: {{ Balance }}$</p> 
+        </ion-col>
+        <div class="fulllines"></div>
+ </ion-row> 
+
+ <div *ngFor="let result of detailbox;let i=index;">
+
+ <ion-row style="background: #FFF;margin-top: 5px;">
+    <ion-col col-12 padding-left> 
+     <p no-margin no-padding class="p-3">{{ result.subtitle }}</p>
+     <p no-margin no-padding class="p-4">{{ result.title }}</p> 
+    </ion-col>
+    <div class="fulllines"></div>
+</ion-row> 
+
+<ion-row style="background: #FFF;margin-top: 5px;" *ngIf="totalrows==i">
+    <ion-col col-12 padding-left> 
+     <p no-margin no-padding class="p-3">{{ result.subtitle }}</p>
+     <p no-margin no-padding class="p-4">{{ result.title }}</p>  
+    </ion-col>
+</ion-row> 
+
+</div>
+<ion-row margin-top > 
+  <ion-col col-12 padding-left style="margin-bottom: 11.74px;"> 
+    <a class="gotonotify" (click)="GotoNext()">See all notifications</a>
+  </ion-col>
+</ion-row>
+</div>
+</div>
+</ion-content>

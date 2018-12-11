@@ -1,0 +1,195 @@
+<!--
+  Generated template for the ProfileproviderPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-header no-shadow no-border>
+  <ion-navbar hideBackButton="true">      
+    <ion-buttons left menuToggle="left" style="display: block !important;" >
+                  <button ion-button icon-only>
+                              <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                  </button>
+                </ion-buttons>
+
+    <ion-title text-center>My Profile</ion-title> 
+
+    <ion-buttons end> 
+          <button ion-button icon-only>
+            <img  class="img-chat" src="assets/imgs/menuicons/chat2.png">
+          </button>
+  </ion-buttons>
+
+  <ion-buttons end>
+          <button ion-button icon-only (click)="presentPopover()">
+                      <img class="img-profile" src="assets/imgs/menuicons/notify.png">
+          </button>
+  </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>   
+ 
+      <ion-segment [(ngModel)]="chooseOptions" >
+          <ion-segment-button  value="Create">
+         <p class="text-header"> DETAILS</p>
+          </ion-segment-button>
+          <ion-segment-button value="list"    style="background-color: #fff;">
+              <p class="text-header"> BADGES</p> 
+          </ion-segment-button>
+          <ion-segment-button value="portfolio"    style="background-color: #fff;">
+              <p class="text-header">PORTFOLIO</p> 
+          </ion-segment-button>
+          <ion-segment-button value="services"    style="background-color: #fff;">
+              <p class="text-header">SERVICES</p> 
+          </ion-segment-button>
+        </ion-segment> 
+
+        <ion-grid no-padding no-margin class="gridcl">
+        <div *ngIf="chooseOptions=='Create'">
+               
+           
+ <ion-row class="rows-mtop"> 
+    <ion-col col-12 text-center>
+     <img class="img-style" src="{{ ImageUrl+imagePath }}" (click)="uploadpicture()" *ngIf="imagePath !=undefined"> 
+     <img class="img-style" src="assets/icon/user.png" *ngIf="imagePath==undefined"  > 
+    </ion-col>
+  
+     </ion-row>
+ 
+
+ 
+     <div class="tittlediv1">  
+         <div class="tittlediv2">
+             <div class="tittlediv3"> FIRST NAME </div>
+         </div>
+         
+     <div class="tittlediv4"></div>
+       <div class="tittlediv5">
+           <div class="tittlediv6"> LAST NAME </div>
+       </div>
+     </div>
+ 
+ 
+     <div class="contentdiv-out">
+         <div class="contentdivlr">
+             <ion-item > <ion-input  type="text" [(ngModel)]="FirstName" placeholder="Mihai" ></ion-input> </ion-item>
+         </div>
+          
+         <div class="contentdiv-center"></div>
+       <div class="contentdivlr">
+           <ion-item>  <ion-input  type="text"  [(ngModel)]="LastName"   placeholder="Petrea" ></ion-input>    </ion-item>
+       </div>
+     </div>   
+ 
+  
+     <ion-row style="margin-top: 20px; display: inline-block;">
+       <ion-col col-12 class="col-12-tittle">EMAIL</ion-col>
+    </ion-row>
+     <ion-item style="margin-top: 6px;"> 
+       <ion-input type="email" value="" placeholder="petreamihaic@gmail.com" [(ngModel)]="email"></ion-input>    </ion-item>
+   
+     <ion-row><ion-col col-12 class="col-12-tittle">PHONE </ion-col></ion-row>
+     <ion-item> <ion-input type="text" value=""  placeholder="40 0748 202 168" [(ngModel)]="phoneNo" ></ion-input>    </ion-item> 
+ 
+        <button ion-button full class="btn-mtop" (click)="SaveBtn()">  Edit </button> 
+ 
+
+          </div>
+          <div *ngIf="chooseOptions=='list'">
+
+              <ion-row  class="rowsbagde">
+                  <ion-col col-3 style=" max-width: 21%;">
+                   <img class="img-style-bagde" src="assets/imgs/profile/Group693.png">
+                  </ion-col>
+                  <ion-col col-9>  
+                    <p no-margin no-padding class="p1-bagde">King Member</p>  
+                    <p no-margin no-padding class="p2-bagde">Have more than 10 offers</p> 
+                  </ion-col>
+                   </ion-row> 
+
+                   <ion-row  class="rowsbagde">
+                      <ion-col col-3 style=" max-width: 21%;">
+                       <img class="img-style-bagde" src="assets/imgs/profile/Group694.png">
+                      </ion-col>
+                      <ion-col col-9>  
+                        <p no-margin no-padding class="p1-bagde">Trusted Member</p>  
+                        <p no-margin no-padding class="p2-bagde">Have more than 25 reviews on profile</p> 
+                      </ion-col>
+                       </ion-row> 
+
+                       <ion-row  class="rowsbagde">
+                          <ion-col col-3 style=" max-width: 21%;">
+                           <img class="img-style-bagde" src="assets/imgs/profile/Group695.png">
+                          </ion-col>
+                          <ion-col col-9>  
+                            <p no-margin no-padding class="p1-bagde1">Preminum Member</p>  
+                            <p no-margin no-padding class="p2-bagde1">Post 5 more offers to earn this!</p> 
+                          </ion-col>
+                           </ion-row> 
+              </div>
+    </ion-grid>
+
+    <div *ngIf="chooseOptions=='services'" style="padding:15px">
+        <ion-row style="margin-top: 20px; display: inline-block;">
+            <ion-col col-12 class="col-12-tittle">Website</ion-col>
+         </ion-row>
+          <ion-item style="margin-top: 6px;"> 
+            <ion-input type="text" value="" placeholder="www.google.com" [(ngModel)]="Website"></ion-input>  
+          </ion-item>  
+
+
+          <ion-row style="margin-top: 20px; display: inline-block;">
+              <ion-col col-12 class="col-12-tittle">Description</ion-col>
+           </ion-row>
+            <ion-item style="margin-top: 6px;"> 
+              <textarea rows="5" maxLength="500" [(ngModel)]="about"></textarea>  
+            </ion-item>  
+
+          <ion-row style="margin-top: 20px; display: inline-block;">
+              <ion-col col-12 class="col-12-tittle">Your Services ({{ ServiceArrLen }})</ion-col>
+           </ion-row>
+         
+
+      <div style="margin-top: 7px;padding-top: 25px;border:1px solid #D7D7D7">
+        <ion-row no-padding no-margin *ngFor="let service of ServiceArr">   
+            <ion-col col-11>{{ service }}</ion-col> 
+            <ion-col col-1 > <img src="assets/icon/arrow-forward.png"> </ion-col>
+        </ion-row>
+      </div>
+
+             <ion-fab right bottom >
+                <button ion-fab mini><ion-icon ><img width="15" src="assets/icon/edit-button.png"></ion-icon></button>
+              </ion-fab>
+
+    </div>
+
+
+    <div *ngIf="chooseOptions=='portfolio'" >
+
+          <ion-card *ngFor="let resultarr of PortfolioArr">
+                  <img src="{{ ImageUrl+resultarr.image }}"/> 
+                  <ion-card-content>
+                    <p> Services Offered: {{ resultarr.title }}  </p>   
+                    <p *ngIf="resultarr.price == ''">  Price:  </p> 
+                    <p *ngIf="resultarr.price != ''">  Price: {{ resultarr.price }}$ / hour </p>
+                  </ion-card-content>
+          </ion-card>
+                <!-- <ion-card>
+                  <img src="assets/imgs/campaign/clement-h-544786-unsplash.png"/>
+                  <ion-card-content>
+                    <p>  Services Offered: Front-end Development </p>
+                    <p>  Price: 200$ / hour </p>
+                  </ion-card-content>
+                </ion-card> -->
+
+          <ion-fab right bottom (click)="addItem()">
+                  <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+                </ion-fab>
+    </div>
+</ion-content>

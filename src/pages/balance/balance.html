@@ -1,0 +1,72 @@
+<!--
+  Generated template for the BalancePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-shadow no-border>
+    <ion-navbar >  
+        
+            <ion-buttons left menuToggle="left" >
+                    <button ion-button icon-only>
+                                <img class="img-menu" src="assets/imgs/menuicons/Menu.png"> 
+                    </button>
+                  </ion-buttons>
+
+      <ion-title text-center>Balance</ion-title> 
+
+      <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+            </button>
+    </ion-buttons>
+
+    <ion-buttons end (click)="ProfileBtn()">
+            <button ion-button icon-only>
+                        <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+            </button>
+    </ion-buttons>
+
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding> 
+        <ion-grid no-padding no-margin class="gridcl">
+
+        <ion-row > <ion-col col-12 no-padding no-margin class="contenttittle">Balance: {{ Balance }}$</ion-col> </ion-row> 
+              
+<div style="margin-top: 12px;">
+
+        <ion-row style="background: #fff; border: 1px solid #d7d7d7; margin-bottom: 12px;" *ngFor="let result of ReviewArr">
+                <ion-col col-12> 
+                 <p no-margin no-padding class="p-1">{{ result.amount }}$ - {{ result.message }}</p>
+                 <p no-margin no-padding class="p-2">Earned on: {{ result.dateonly }}</p> 
+                </ion-col>
+         </ion-row> 
+
+         <!-- <ion-row style="background: #fff; border: 1px solid #d7d7d7;     margin-bottom: 12px;">
+            <ion-col col-12> 
+             <p no-margin no-padding class="p-1">20$ - Refferal of *username* for his service</p>
+             <p no-margin no-padding class="p-2">Earned on: 20th May</p> 
+            </ion-col>
+     </ion-row>  -->
+
+   
+</div>
+            
+        </ion-grid>
+        
+  </ion-content>
+  <ion-footer>    
+        <div class="div-footer">  
+          <ion-row >  
+              <ion-col col-6 style="padding-left: 15px; padding-right: 7px;">
+        <ion-row no-margin no-padding> <ion-col col-12 class="col-12-tittle">AMOUNT OF MONEY</ion-col></ion-row>
+                        <ion-item > <ion-input type="number" [(ngModel)]="Amount"></ion-input> </ion-item>
+              </ion-col>
+              <ion-col col-6 style="padding-left: 7px; padding-right: 15px;">
+                        <button ion-button full class="btn-inviteuser" (click)="InviteUserBtn()"> WITHDRAW  </button> 
+                  </ion-col>
+          </ion-row>
+      </div>
+      </ion-footer> 

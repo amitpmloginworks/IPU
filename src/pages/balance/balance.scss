@@ -1,0 +1,94 @@
+page-balance {
+    ion-title {
+        color: #191A45;
+    }
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background: #ffffff;
+    }
+
+    .toolbar-title-md{
+        font-size: 14px;
+        font-family: "PoppinsMedium";
+    }
+    .content-md {
+        color: #191A45;
+        background-color: #f9fbfc;
+    }
+    .contenttittle
+    {
+        font-size: 18px;
+    
+        color: #191A45;
+        margin-top: 7px;
+        font-family: "PoppinsMedium";
+    }
+ 
+    .gridcl
+    {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-top: 12px !important;
+        padding-bottom: 5px !important;
+    }
+    .scroll-content {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .img-menu{
+        margin-left: 15px;
+    }
+    .img-chat{
+        margin-right: 12px;
+    }
+    .img-profile{
+        margin-right: 15px; 
+    }
+
+    .p-1{
+        margin-left: 15px;
+        margin-top: 12px;
+        color:#46476A;
+        font-size: 12px;
+        font-family: 'SourceSansProRegular';
+    }
+    .p-2{
+        margin-left: 15px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        color:#3096F7;    
+        font-size: 12px;
+        font-family: "SourceSansProRegular";
+    }
+ 
+.div-footer{  
+    background: #FFFFFF;
+    border-top: 1px solid #e7e6e6;
+}
+  
+.btn-inviteuser{
+    font-family: "Arial Bold";
+    margin-bottom: 19px;
+    margin-top: 23px;  
+    font-size: 12px !important;
+}
+.item-md
+{
+    border: 1px solid #D7D7D7 !important;
+     padding-left: 0px !important; 
+    color: #46476A;
+    background-color: #fff;
+    font-size: 14px !important;
+}
+
+.col-12-tittle{ 
+    font-family: "SourceSansProSemibold";
+    font-size: 12px;
+    color:#191A45;
+}
+
+   
+}

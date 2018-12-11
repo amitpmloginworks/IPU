@@ -1,0 +1,86 @@
+<!--
+  Generated template for the CampaigndetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-shadow no-border>
+
+    <ion-navbar  > 
+     
+        <ion-title text-center>Campaign details</ion-title>
+        <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+            </button>
+    </ion-buttons>
+  
+    <ion-buttons end (click)="ProfileBtn()">  
+            <button ion-button icon-only>
+                        <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+            </button>
+    </ion-buttons>
+      </ion-navbar>
+  
+  </ion-header> 
+  
+  
+  <ion-content padding>
+      <ion-grid no-padding no-margin class="gridcl">
+      <ion-card class="card-style" no-padding no-margin>
+          <img src="{{ campaignImg }}">   
+        <div class="padding-style"> 
+          <p  class="tag" no-padding no-margin>
+              Service Offered:<span style="font-weight: 400;"> {{ tittle }} </span></p>
+              <p  class="tag" style="color:#191A45" no-padding no-margin>
+                Started on:<span style="font-weight: 400;"> {{ datetime }}</span> 
+              </p>  
+        </div>
+            </ion-card>
+  
+  <p class="p-tittle" no-padding no-margin>Agents Invited: {{ invited }}</p>
+  <div>
+      <ion-slides>
+          <ion-slide style="width:20% !important"  *ngFor="let img of ImgInvite" >
+             
+            <img class="img-style" src="{{ ImageUrl+img.image }}" alt="{{img.name}}" imageViewer >
+        
+          </ion-slide>
+        </ion-slides>
+  </div>
+  <p class="p-tittle" no-padding no-margin>Accepted Invitations: {{ accepted }}</p>
+  <div>
+      <ion-slides>
+          <ion-slide   *ngFor="let img of ImgInvitation" >
+           
+            <img class="img-style" src="{{ ImageUrl+img.image }}" >  
+        
+          </ion-slide>
+        </ion-slides>
+  </div>
+  <p class="p-tittle" no-padding no-margin>Agents who left feedback: {{ reviewed }}</p>
+  <div>
+      <ion-slides>  
+          <ion-slide   *ngFor="let img of ImgFeedback" >
+           
+            <img class="img-style" src="{{ ImageUrl+img.image }}" >
+        
+          </ion-slide>
+        </ion-slides>
+  </div>
+  
+      <ion-row no-padding no-margin margin-top>
+        <ion-col col-6 style="font-family: PoppinsSemibold;" no-padding no-margin>
+    <button full ion-button (click)="InviteAgentsBtn()" style="    width: 95%;
+    margin-right: 5px;">Invite Agents</button>
+        </ion-col>
+          
+        <ion-col col-6 style="font-family: PoppinsSemibold; " no-padding no-margin>
+            <button  style="border: 1px solid; width: 95%;
+            margin-left: 5px;" full ion-button outline>End Campaign</button>
+        </ion-col>
+      </ion-row>
+  
+  </ion-grid>
+  </ion-content>
+  

@@ -1,0 +1,121 @@
+page-setting {
+    ion-title {
+        color: #191A45;
+    }
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background: #ffffff;
+    }
+
+    .toolbar-title-md{
+        font-size: 14px;
+        font-family: "PoppinsMedium";
+    }
+    .content-md {
+        color: none !important;
+        background-color: #f9fbfc;
+    }
+
+    .gridcl
+    {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-top: 12px !important;
+        padding-bottom: 5px !important;
+    }
+
+    .scroll-content {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+   
+
+    .img-menu{
+        margin-left: 15px;
+    }
+    .img-chat{
+        margin-right: 12px;
+    }
+    .img-profile{
+        margin-right: 15px; 
+    }
+
+    .text-header{
+        text-align:center;
+        margin-top: 9px;
+        color : #ACACBC;
+        font-size : 14px;
+        font-family: "PoppinsLight";  
+        letter-spacing: 0.08rem;
+        }
+
+        .segment-md .segment-button{
+            background-color: #fff;
+            padding:0px;
+            opacity: 1;
+            height:5.2rem;
+            } 
+            
+            .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+                border-color: #3096F7;
+                opacity: 1;
+                
+            }
+            
+            .segment-activated p {
+                color: #3096F7 !important;
+            }
+
+            ion-segment {
+                background-color:#fff;
+            }
+
+            .contenttittle
+            {
+                font-size: 17px;
+                color: #191A45;
+                margin-top: 7px;
+                font-family: "SourceSansProSemibold";
+            }
+
+            .contenttittle1
+            {
+                font-size: 14px;
+                color: #191A45;
+                margin-top: 18px;
+                font-family: "SourceSansProSemibold";
+            }
+
+            .btn-inviteuser{
+                font-family: "PoppinsSemibold"; 
+                width: 50%;
+                margin-top: 20px;
+            }
+
+            .div-text{
+                border: 1px solid #d7d7d7;
+                padding: 12px;
+                font-size: 14px;
+                color: #46476a;
+                background: #fff; 
+                font-family: 'SourceSansProRegular';
+            }
+    
+            .item-md{
+                border: 1px solid #D7D7D7 !important;
+                padding-left: 0px !important;
+                color: #46476A;
+                background-color: #fff;
+                font-size: 14px !important;
+            }
+            .scroll-content {
+                padding-left: 0px !important;
+                padding-right: 0px !important;
+                padding-top: 0px !important;
+                padding-bottom: 0px !important;
+                }
+
+}

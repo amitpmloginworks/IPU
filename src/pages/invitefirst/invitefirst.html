@@ -1,0 +1,179 @@
+<!--
+  Generated template for the InvitefirstPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header no-shadow no-border>
+    <ion-navbar >  
+        
+      <ion-title text-center>Invite agents</ion-title> 
+
+      <ion-buttons end> 
+            <button ion-button icon-only>
+              <img  class="img-chat" src="assets/imgs/menuicons/chat.png">
+            </button>
+    </ion-buttons>
+
+    <ion-buttons end (click)="ProfileBtn()">
+            <button ion-button icon-only>
+                        <img class="img-profile" src="assets/imgs/menuicons/profiles.png">
+            </button>
+    </ion-buttons>
+
+    </ion-navbar>
+  </ion-header> 
+  
+  <ion-content padding> 
+        <ion-grid no-padding no-margin >
+
+                <ion-row class="gridcl" style="margin-top: 8px;">
+                    <ion-col col-6 no-padding no-margin class="contenttittle" (click)="GotoFilter()">+ Add filters</ion-col>
+   
+                    <ion-col col-6 no-padding no-margin text-right class="contenttittle-col6">   
+                                Sort by: <a  style="color: #3096F7" (click)="SortByData()"> {{ SortTxt }} </a>  
+                    </ion-col>
+                </ion-row>
+
+              <div *ngIf="surveyForm"> 
+                    <form [formGroup]="surveyForm">
+                        <div formArrayName="answers">
+ 
+<div *ngFor="let badgetype of answers;let j=index;" [formGroupName]="j">
+        <div class="divlines"></div> 
+ <ion-row class="gridcl">  <ion-col col-12 text-left class="contenttittle1">Badge Type {{ badgetype.badge }}</ion-col> </ion-row>   
+             
+                <div class="gridcl">   
+                   <ng-container> 
+                        <div formArrayName="answer_by_user"> 
+                          <div *ngFor="let result of badgetype.answers; let i = index" >
+         <ion-row class="gridc1-rows" *ngIf="result.id !=0"> 
+                 <ion-col col-1  style="max-width: 10%;width: 10%;"> 
+
+                        <ion-item no-padding no-margin>         
+                          <ion-checkbox no-padding no-margin (ionChange)="onChange(result.id, $event.checked, j)" value="result.id"></ion-checkbox> 
+                        </ion-item>
+
+                         </ion-col>  
+                                               <ion-col col-3 style="max-width: 18%;">
+                                                <img class="img-style" src="{{ ImageUrl+result.image }}" >  
+                                <div class="plus-style2" > 
+                                         <!-- <img  src="assets/imgs/inviteagent/Group694.png" *ngIf="i%2==1">
+                                         <img  src="assets/imgs/inviteagent/Group693.png" *ngIf="i%2==0">  -->
+
+                                         <img  src="assets/imgs/inviteagent/Group694.png" *ngIf="badgetype.badge==1">
+                                         <img  src="assets/imgs/profile/Group694.png" *ngIf="badgetype.badge==2">
+                                         <img  src="assets/imgs/profile/Group695.png" *ngIf="badgetype.badge==3">
+                                         <img  src="assets/imgs/profile/Group696.png" *ngIf="badgetype.badge==4">    
+                                </div> 
+                                <br> 
+                         <div style="margin-top: -25px;">   
+                           <span style="font-size: 12px;margin-left: 15px;">5.0 </span>    
+                            <img src="assets/icon/yellow_star.png" style="height: 11px;">
+                        </div>
+                                               </ion-col>
+                                               <ion-col col-7>  
+                                                <p no-margin no-padding class="p-2">{{ result.name+" "+result.lastname }}</p>
+                                                <p no-margin no-padding class="p-1">UX Designer  </p> 
+                                               </ion-col>
+       
+                                               <ion-col col-1 text-right (click)="OpenCloseArrow1( i,j)" > 
+                                                <img class="img-arrowdown" src="assets/icon/arrow-down.png" id="arrowdowns_{{i}}">   
+                                                <img class="img-arrowdown" src="assets/icon/arrow-up.png" style="display: none;"  id="arrowups_{{i}}">   
+                                                </ion-col> 
+                                                
+
+                                                <div id="y_{{i}}" style="display: none;" > 
+                                                  <ion-col col-12  >
+                                                     <ion-row style="padding-left: 10px;">
+                                                          <ion-col col-12> 
+                                                                          <div style="width:100%;">
+                                                                  <div class="subrows-tittle1">Email:</div> 
+                                                                  <div class="col12-img1">{{ result.email }}</div>  
+                                                                  </div>
+                                                           </ion-col>
+                                                          <ion-col col-12> 
+                                                                          <div style="width:100%;">
+                                                                     <div class="subrows-tittle1">Phone:</div>
+                                                                     <div class="col12-img1">    {{ result.phone }} </div>  
+                                                                     </div> 
+                                                          </ion-col>
+                  
+                                                          
+                                                          <ion-col col-12> 
+                                                                          <div style="width:100%;">
+                                                                     <div class="subrows-tittle1">Rating:</div>
+                                                                     <div class="col12-img1">  5.0* ( {{ result.agentstats.reviews  }} reviews ) </div>  
+                                                                     </div> 
+                                                          </ion-col>
+                  
+                                                          <ion-col col-12> 
+                                                                          <div style="width:100%;">
+                                                                     <div class="subrows-tittle1">Website:</div>
+                                                                     <div class="col12-img1"> </div>  
+                                                                     </div> 
+                                                          </ion-col>
+                  
+                                                          <ion-col col-12> 
+                                                                          <div style="width:100%;">
+                                                                     <div class="subrows-tittle1">Address:</div>
+                                                                     <div class="col12-img1">    {{ result.address }} </div>   
+                                                                     </div> 
+                                                          </ion-col>
+                                                     </ion-row>     
+                                                  
+                                                  </ion-col>
+                                                  </div> 
+
+                                                
+
+                                </ion-row> 
+</div>   
+                          </div>
+                            </ng-container> 
+                             
+                       </div> 
+
+
+                       <!-- <div class="divlines2"></div>   -->
+
+ </div>
+  
+</div>  
+</form>
+</div>  
+
+
+ 
+ <!-- <ion-row class="gridcl">  <ion-col col-12 text-left class="contenttittle1">Badge Type 2</ion-col> </ion-row>
+ <div class="gridcl">
+<ion-row class="gridc1-rows"> 
+ <ion-col col-1  style="max-width: 10%;width: 10%;">  
+        <ion-item no-padding no-margin> <ion-checkbox no-padding no-margin></ion-checkbox> </ion-item>
+         </ion-col>
+                               <ion-col col-3 style="max-width: 18%;">
+                                        <img class="img-style" src="assets/imgs/inviteagent/image.png" style="width: 50px; height: 50px;">
+                                        <div class="plus-style2"> <img  src="assets/imgs/inviteagent/Group694.png"> </div>
+                               </ion-col>
+                               <ion-col col-8> 
+                                <p no-margin no-padding class="p-2">Jamelia Campbell</p>
+                                <p no-margin no-padding class="p-1">UX Designer</p> 
+                               </ion-col>
+                </ion-row> 
+       </div> -->
+
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>    
+      </ion-infinite-scroll>  
+
+        </ion-grid>
+  </ion-content>
+
+  <ion-footer> 
+        
+    <button ion-button  class="btn-inviteuser" (click)="SearchBtn()" >   {{ ButtonTxt }}  <img src="assets/icon/right-arrow.png" style="width: 6%;height: 41%;margin-left: 7px; " ></button> 
+
+  </ion-footer>
+  
